@@ -26,12 +26,21 @@ const Centerizer = styled.div`
 
 const TimeSpecifier = styled.div`
     display: flex;
-    flex-direction: row;
+
+    @media screen and (max-width: 767px) {
+        flex-direction: column;
+    }
+
+    @media screen and (min-width: 768px) {
+        flex-direction: row;
+    }
+
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     & > * {
         margin: 5px;
     }
+
     margin-bottom: 20px;
 `
 

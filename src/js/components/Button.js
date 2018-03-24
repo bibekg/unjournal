@@ -10,6 +10,6 @@ export default styled.button`
     background-color: ${colors.purple};
     color: ${colors.white};
     padding: 10px 30px;
-    font-size: 48px;
+    font-size: ${props => (props.fontSize || 24)}px;
     cursor: pointer;
 `

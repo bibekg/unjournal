@@ -20,7 +20,14 @@ const TypePanelWrapper = styled.div`
     width: 100%;
     height: 100%;
     max-width: 800px;
-    padding-top: 50px;
+
+    @media screen and (max-width: 767px) {
+        padding: 10px 10px;   
+    }
+
+    @media screen and (min-width: 768px) {
+        padding: 50px 0;
+    }
 `
 
 const NotificationBarDiv = styled.div`
@@ -28,36 +35,41 @@ const NotificationBarDiv = styled.div`
     width: 100vw;
     left: 0;
     bottom: ${props => props.show ? 0 : -100}px;
-    height: 100px;
-    transition: 0.5s ease bottom;
+    height: ${props => props.useFullScreen ? '100%' : '100px'};
+    transition: 0.5s ease all;
 `
 
 type PropsType = {
     totalWriteTime: number,
-    remainingTime: number,
 }
 
 type StateType = {
-    remainingTime: number
+    state: 'writing' | 'time-end' | 'done',
+    startTime: number,
+    remainingTime: number,
+    showInfoBar: boolean
 }
 
 export default class WritingView extends React.Component<PropsType> {
 
+    // typePanel: ?HTMLTextAreaElement
+    // timerInterval: ?(() => void)
+
     constructor(props: PropsType) {
         super(props)
 
-        const writeTime = props.totalWriteTime * 60 * 1000
-
         this.state = {
-            totalWriteTime: writeTime,
+            totalWriteTime: props.totalWriteTime,
             startTime: Date.now(),
-            remainingTime: writeTime,
-            showInfoBar: true
+            remainingTime: props.totalWriteTime,
+            showInfoBar: true,
+            state: 'writing'
         }
 
         this.updateRemainingTime = this.updateRemainingTime.bind(this)
         this.handleKeyDown = this.handleKeyDown.bind(this)
         this.handleMouseMove = this.handleMouseMove.bind(this)
+        this.handleDoneClick = this.handleDoneClick.bind(this)
     }
 
     componentDidMount() {
@@ -79,10 +91,41 @@ export default class WritingView extends React.Component<PropsType> {
         this.setState({ showInfoBar: true })
     }
 
+    handleDoneClick() {
+        const backspaceTillEmpty = () => {
+            const currValue = this.typePanel.value
+            if (currValue.length === 0) {
+                clearInterval(backspaceTillEmpty)
+                this.setState({
+                    state: 'done'
+                })
+            }
+            this.typePanel.value = currValue.slice(0,-1)
+        }
+        setInterval(backspaceTillEmpty, 10)
+    }
+
     updateRemainingTime() {
-        this.setState({
-            remainingTime: this.state.totalWriteTime - (Date.now() - this.state.startTime)
-        })
+        if (this.state.remainingTime <= 0) {
+            const nextState = { remainingTime: 0 }
+            if (this.typePanel && this.typePanel.value.length === 0) {
+                nextState.state = 'done'
+            }
+            this.setState(nextState)
+            if (this.timerInterval) {
+                clearInterval(this.timerInterval)
+            }
+        } else {
+            const remainingTime = this.state.totalWriteTime - (Date.now() - this.state.startTime)
+
+            const nextState = { remainingTime }
+            if (remainingTime === 0) {
+                nextState.process = 'time-end'
+                this.animateEnd()
+            }
+
+            this.setState(nextState)
+        }
     }
 
     render() {
@@ -90,14 +133,20 @@ export default class WritingView extends React.Component<PropsType> {
             <WritingViewWrapper>
                 <TypePanelWrapper>
                     <TypePanel 
+                        innerRef={(ta: HTMLTextAreaElement) => { this.typePanel = ta }}
                         placeholder={'Write freely...'}
                         tabIndex={1}
                         onKeyDown={this.handleKeyDown}
                     />
                 </TypePanelWrapper>
-                <NotificationBarDiv show={this.state.showInfoBar || this.state.remainingTime === 0} >
+                <NotificationBarDiv 
+                    show={this.state.showInfoBar || this.state.remainingTime === 0} 
+                    useFullScreen={this.state.state === 'done'}
+                >
                     <WritingInfoPanel 
-                        timeLeft={this.state.remainingTime} 
+                        onDoneClick={this.handleDoneClick}
+                        timeLeft={this.state.remainingTime}
+                        writeState={this.state.state}
                     />
                 </NotificationBarDiv>
             </WritingViewWrapper>

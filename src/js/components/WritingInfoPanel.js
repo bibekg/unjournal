@@ -3,6 +3,7 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import Text from './Text'
+import Button from './Button'
 import { colors } from '../styles'
 
 const WrapperDiv = styled.div`
@@ -11,12 +12,15 @@ const WrapperDiv = styled.div`
     padding: 15px;
     background-color: ${colors.green};
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 `
 
 type PropsType = {
-    timeLeft: number
+    timeLeft: number,
+    onDoneClick: () => void,
+    writeState: 'writing' | 'time-end' | 'done'
 }
 
 const formatTime = (ms: number): { minutes: number, seconds: number } => {
@@ -29,29 +33,36 @@ const formatTime = (ms: number): { minutes: number, seconds: number } => {
 
 export default function WritingInfoPanel(props: PropsType) {
 
-    if (props.timeLeft > 0) {
+    const getTimerText = () => {
+        if (props.timeLeft > 0) {
+            const t = formatTime(props.timeLeft)
 
-        const t = formatTime(props.timeLeft)
-
-        let timeText
-        if (t.minutes === 0) {
-            timeText = `${t.seconds} seconds remaining`
-        } else if (t.minutes === 1) {
-            timeText = `1 minute, ${t.seconds} seconds remaining`
+            if (t.minutes === 0) {
+                if (t.seconds <= 10) {
+                    return 'Just a few seconds left.'
+                }
+                return 'Less than one minute remaining.'
+            } else if (t.minutes === 1) {
+                return '1 minute remaining.'
+            } else {
+                return `${t.minutes} minutes remaining.`
+            }
         } else {
-            timeText = `${t.minutes} minutes remaining`
+            return 'Done for today. Good work!'
         }
-
-        return (
-            <WrapperDiv>
-                <Text bold>{timeText}</Text>
-            </WrapperDiv>
-        )
-    } else {
-        return (
-            <WrapperDiv>
-                <Text bold>You're done! See you back here tomorrow.</Text>
-            </WrapperDiv>
-        )
     }
+
+    return (
+        <WrapperDiv>
+            <Text bold>{getTimerText()}</Text>
+            {(props.timeLeft === 0 && props.writeState !== 'done') && (
+                <Button fontSize={18} onClick={props.onDoneClick}>
+                    Release into digital void
+                </Button>
+            )}
+        </WrapperDiv>
+
+    )
+
+    
 }

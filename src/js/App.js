@@ -49,7 +49,7 @@ class App extends React.Component<PropsType, StateType> {
     handleStartRequest(time: number) {
         this.setState({ 
             currentView: 'writing',
-            totalWriteTime: time
+            totalWriteTime: time * 60 * 1000
         })
     }
 

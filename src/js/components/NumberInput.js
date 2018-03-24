@@ -21,6 +21,13 @@ const InputElement = styled.input`
     color: rgba(0,0,0,0.5);
   }
 
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+  }
+  -moz-appearance: textfield;
+
   ${placeholderMixin}
 `
 
@@ -32,6 +39,8 @@ type PropsType = {
 export default function(props: PropsType) {
   return (
     <InputElement
+      type='number'
+      min={0}
       width={props.width}
       value={props.value}
       onChange={props.onChange}

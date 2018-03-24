@@ -9,6 +9,8 @@ export default styled.p`
     line-height: ${props => (14 * (props.paragraph ? 2.0 : 1.37))}px;
     color: ${props => props.color ? props.color : colors.white};
     ${props => props.center && 'text-align: center;'}
+    text-decoration: ${props => props.underline ? 'underline' : 'none'};
+    cursor: ${props => props.pointer ? 'pointer' : 'default'};
     letter-spacing: 0.8px;
     margin: 5px 0;
 `

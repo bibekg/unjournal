@@ -7,7 +7,8 @@
   "scripts": {
     "start": "parcel ./src/index.html",
     "build": "parcel build src/js/index.js -d build/ --public-url ./",
-    "deploy": "surge"
+    "deploy": "yarn build && yarn deploy-surge",
+    "deploy-surge": "surge --project build --domain unjournal.surge.sh"
   },
   "dependencies": {
     "moment": "^2.21.0",
