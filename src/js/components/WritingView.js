@@ -95,7 +95,7 @@ export default class WritingView extends React.Component<PropsType> {
                         onKeyDown={this.handleKeyDown}
                     />
                 </TypePanelWrapper>
-                <NotificationBarDiv show={this.state.showInfoBar} >
+                <NotificationBarDiv show={this.state.showInfoBar || this.state.remainingTime === 0} >
                     <WritingInfoPanel 
                         timeLeft={this.state.remainingTime} 
                     />
