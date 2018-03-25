@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "dev": "parcel ./src/index.html",
-    "build": "parcel build src/js/index.js -d build/ --public-url ./",
+    "build": "parcel build src/index.html -d build/ --public-url ./",
     "deploy": "yarn build && yarn deploy-surge",
     "deploy-surge": "surge --project build --domain unjournal.surge.sh",
     "clean": "rm -rf dist && rm -rf build"
