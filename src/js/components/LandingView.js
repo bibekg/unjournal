@@ -56,6 +56,9 @@ type StateType = {
 }
 
 export default class LandingView extends React.Component<PropsType, StateType> {
+
+    timeInput: ?HTMLInputElement
+
     constructor(props: PropsType) {
         super(props)
 
@@ -67,11 +70,17 @@ export default class LandingView extends React.Component<PropsType, StateType> {
         this.handleStart = this.handleStart.bind(this)
     }
 
+    componentDidMount() {
+        if (this.timeInput) {
+            this.timeInput.select()
+        }
+    }
+
     handleTimeChange(event: SyntheticEvent<*>) {
         const proposedValue = Number(event.target.value)
-
-        if (!isNaN(proposedValue)) {
-            this.setState({ writeTime: proposedValue })
+        const isValidNumber = !isNaN(proposedValue) && proposedValue > 0 && proposedValue < 100
+        if (event.target.value === '' || isValidNumber) {
+            this.setState({ writeTime: parseInt(event.target.value, 10) })
         }        
     }
 
@@ -89,9 +98,11 @@ export default class LandingView extends React.Component<PropsType, StateType> {
                     <TimeSpecifier>
                         <Title>{copy.timeSelector.pre}</Title>
                         <WriteTimeInput
+                            innerRef={(el: HTMLInputElement) => { this.timeInput = el }}
                             width={100}
                             value={this.state.writeTime}
                             onChange={this.handleTimeChange}
+                            onEnterPress={this.handleStart}
                         />
                         <Title>{copy.timeSelector.post[this.state.writeTime === 1 ? 'singular' : 'plural']}</Title>
                     </TimeSpecifier>

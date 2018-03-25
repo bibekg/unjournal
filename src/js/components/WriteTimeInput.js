@@ -18,6 +18,11 @@ const InputElement = styled.input`
   outline: none;
   font-size: 64px;
 
+  ::selection {
+    background-color: ${colors.cream};
+    color: ${colors.black};
+  }
+
   &::placeholder {
     color: rgba(0,0,0,0.5);
   }
@@ -33,19 +38,34 @@ const InputElement = styled.input`
 `
 
 type PropsType = {
+  innerRef: (?HTMLInputElement) => void,
   value: number,
-  onChange: (number) => void
+  onChange: (number) => void,
+  onEnterPress: () => void
 }
 
-export default function(props: PropsType) {
+export default function WriteTimeInput(props: PropsType) {
+  const checkForEnter = (event: SyntheticEvent<*>) => {
+    if (event.key === 'Enter') {
+      props.onEnterPress()
+    }
+  }
+
   return (
     <InputElement
       type='number'
+      autofocus='autofocus'
       min={1}
       max={99}
+      innerRef={props.innerRef}
       width={props.width}
       value={props.value}
       onChange={props.onChange}
+      onKeyDown={checkForEnter}
     />
   )
+}
+
+WriteTimeInput.defaultProps = {
+  innerRef: () => { }
 }

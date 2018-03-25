@@ -3,7 +3,9 @@
 import styled from 'styled-components'
 import { colors } from '../styles'
 
-export default styled.textarea`
+export default styled.textarea.attrs({
+    autofocus: 'autofocus'
+})`
     width: 100%;
     height: 100%;
     background-color: transparent;
