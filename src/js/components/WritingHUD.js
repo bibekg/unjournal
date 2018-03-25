@@ -4,7 +4,6 @@ import * as React from 'react'
 import styled from 'styled-components'
 import Text from './Text'
 import Button from './Button'
-import TimeLeftBar from './TimeLeftBar'
 import { colors } from '../styles'
 
 const WrapperDiv = styled.div`
@@ -16,11 +15,21 @@ const WrapperDiv = styled.div`
     transition: 0.5s ease all;
 `
 
-const TimeLeftBarWrapper = styled.div`
+const TimeLeftBar = styled.div`
     position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
+    height: 5px;
+    display: flex;
+    align-items: flex-start;
+`
+
+const RemainingTimeBar = styled.div`
+    height: 100%;
+    background-color: ${colors.green};
+    width: ${props => 100 * props.remainingPercentage}%;
+    transition: 0.5s ease width;
 `
 
 const COMPLETION_BANNER_HEIGHT = 100
@@ -59,9 +68,9 @@ export default function WritingHUD(props: PropsType) {
 
     return (
         <WrapperDiv show={showHUD}>
-            <TimeLeftBarWrapper>
-                <TimeLeftBar totalTime={totalTime} timeLeft={timeLeft} />
-            </TimeLeftBarWrapper>
+            <TimeLeftBar>
+                <RemainingTimeBar remainingPercentage={timeLeft / totalTime} />
+            </TimeLeftBar>
             <CompletionBanner show={timeLeft === 0}>
                 <Text bold>Time's up. Ready to release your words into the digital void?</Text>
                 <BannerButtons>
@@ -71,7 +80,5 @@ export default function WritingHUD(props: PropsType) {
             </CompletionBanner>
         </WrapperDiv>
 
-    )
-
-    
+    )   
 }

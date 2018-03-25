@@ -4,5 +4,6 @@ export const colors = {
     white: '#f0f4f7',
     cream: '#F7EFE0',
     black: '#717076',
-    grey: '#d4dad1'
+    grey: '#d4dad1',
+    lightGrey: '#D4DAD1'
 }

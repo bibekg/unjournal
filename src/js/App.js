@@ -29,9 +29,7 @@ const AppWrapper = styled.div`
     height: 100vh;
 `
 
-type PropsType = {
-
-}
+type PropsType = {}
 
 type StateType = {
     currentView: 'landing' | 'writing',

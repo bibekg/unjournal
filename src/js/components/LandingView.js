@@ -3,10 +3,11 @@
 import * as React from 'react'
 import styled from 'styled-components'
 import { colors } from '../styles'
+import copy from '../copy'
 import Button from './Button'
 import Title from './Title'
 import Text from './Text'
-import NumberInput from './NumberInput'
+import WriteTimeInput from './WriteTimeInput'
 
 const LandingViewWrapper = styled.div`
     background-color: ${colors.green};
@@ -83,13 +84,13 @@ export default class LandingView extends React.Component<PropsType, StateType> {
             <LandingViewWrapper>
                 <Centerizer>
                     <TimeSpecifier>
-                        <Title>I want to write for</Title>
-                        <NumberInput
+                        <Title>{copy.timeSelector.pre}</Title>
+                        <WriteTimeInput
                             width={100}
                             value={this.state.writeTime}
                             onChange={this.handleTimeChange}
                         />
-                        <Title>minutes.</Title>
+                        <Title>{copy.timeSelector.post}</Title>
                     </TimeSpecifier>
                     <Button onClick={this.handleStart}>
                         Write

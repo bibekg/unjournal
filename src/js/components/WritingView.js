@@ -6,6 +6,7 @@ import moment from 'moment'
 import TypePanel from './TypePanel'
 import WritingHUD from './WritingHUD'
 import { colors } from '../styles'
+import copy from '../copy'
 
 const WritingViewWrapper = styled.div`
     width: 100%;
@@ -65,9 +66,9 @@ export default class WritingView extends React.Component<PropsType> {
         super(props)
 
         this.state = {
-            totalWriteTime: 2000,
+            totalWriteTime: props.totalWriteTime,
             startTime: Date.now(),
-            remainingTime: 2000,
+            remainingTime: props.totalWriteTime,
             showHUD: true,
             showHUDToggle: false,
             actionBasedHUD: true,
@@ -181,7 +182,7 @@ export default class WritingView extends React.Component<PropsType> {
                 <TypePanelWrapper>
                     <TypePanel 
                         innerRef={(ta: HTMLTextAreaElement) => { this.typePanel = ta }}
-                        placeholder={'Write freely...'}
+                        placeholder={copy.typePanelPlaceholder}
                         tabIndex={1}
                         onKeyDown={this.handleKeyDown}
                     />
@@ -194,8 +195,11 @@ export default class WritingView extends React.Component<PropsType> {
                     showHUD={this.state.showHUD}
                 />
 
-                <HUDToggle show={this.state.showHUDToggle && !this.state.showHUD} onClick={this.toggleHUD}>
-                    I'm done now
+                <HUDToggle 
+                    show={this.state.showHUDToggle && !this.state.showHUD} 
+                    onClick={this.toggleHUD}
+                >
+                    {copy.hudToggle}
                 </HUDToggle>
             </WritingViewWrapper>
         )

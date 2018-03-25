@@ -12,6 +12,7 @@ const InputElement = styled.input`
   background-color: transparent;
   text-align: center;
   border: none;
+  border-radius: 0;
   border-bottom: 4px solid ${colors.cream};
   color: ${colors.cream};
   outline: none;
@@ -41,6 +42,7 @@ export default function(props: PropsType) {
     <InputElement
       type='number'
       min={1}
+      max={99}
       width={props.width}
       value={props.value}
       onChange={props.onChange}

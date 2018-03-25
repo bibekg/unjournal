@@ -14,6 +14,10 @@ export default styled.textarea`
     outline: none;
     resize: none;
 
+    ::placeholder {
+        color: ${colors.lightGrey};
+    }
+
     ::-webkit-scrollbar {
         width: 6px;
     }
