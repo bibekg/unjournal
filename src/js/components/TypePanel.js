@@ -1,5 +1,4 @@
 // @flow
-// @flow
 
 import styled from 'styled-components'
 import { colors } from '../styles'
@@ -15,7 +14,7 @@ export default styled.textarea`
     resize: none;
 
     ::placeholder {
-        color: ${colors.lightGrey};
+        color: ${colors.grey};
     }
 
     ::-webkit-scrollbar {

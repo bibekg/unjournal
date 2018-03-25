@@ -38,7 +38,7 @@ const HUDToggle = styled.div`
     position: fixed;
     top: 10px;
     right: 10px;
-    color: ${colors.green};
+    color: ${colors.brown};
     display: ${props => props.show ? 'block' : 'none'};
     cursor: pointer;
 `

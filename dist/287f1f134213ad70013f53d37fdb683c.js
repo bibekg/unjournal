@@ -22492,12 +22492,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 var colors = exports.colors = {
     green: '#19ab80',
-    purple: '#475ae0',
-    white: '#f0f4f7',
+    brown: '#846044',
     cream: '#F7EFE0',
+    white: '#f0f4f7',
     black: '#717076',
-    grey: '#d4dad1',
-    lightGrey: '#D4DAD1'
+    grey: '#d4dad1'
 };
 },{}],159:[function(require,module,exports) {
 'use strict';
@@ -22520,7 +22519,7 @@ Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n    border-radius: 3px;\n    border: none;\n    background-color: ', ';\n    color: ', ';\n    padding: 10px 30px;\n    font-size: ', 'px;\n    cursor: pointer;\n'], ['\n    border-radius: 3px;\n    border: none;\n    background-color: ', ';\n    color: ', ';\n    padding: 10px 30px;\n    font-size: ', 'px;\n    cursor: pointer;\n']);
+var _templateObject = _taggedTemplateLiteral(['\n    border-radius: 3px;\n    border: none;\n    background-color: ', ';\n    color: ', ';\n    padding: 10px 30px;\n    font-size: ', 'px;\n    font-weight: bold;\n    cursor: pointer;\n'], ['\n    border-radius: 3px;\n    border: none;\n    background-color: ', ';\n    color: ', ';\n    padding: 10px 30px;\n    font-size: ', 'px;\n    font-weight: bold;\n    cursor: pointer;\n']);
 
 var _react = require('react');
 
@@ -22538,7 +22537,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-exports.default = _styledComponents2.default.button(_templateObject, _styles.colors.purple, _styles.colors.white, function (props) {
+exports.default = _styledComponents2.default.button(_templateObject, _styles.colors.brown, _styles.colors.cream, function (props) {
     return props.fontSize || 18;
 });
 },{"react":15,"styled-components":21,"../styles":14}],9:[function(require,module,exports) {
@@ -29215,7 +29214,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-exports.default = _styledComponents2.default.textarea(_templateObject, 1.37 * 24, _styles.colors.lightGrey, _styles.colors.green);
+exports.default = _styledComponents2.default.textarea(_templateObject, 1.37 * 24, _styles.colors.grey, _styles.colors.green);
 },{"styled-components":21,"../styles":14}],7:[function(require,module,exports) {
 'use strict';
 
@@ -29370,7 +29369,7 @@ var WritingViewWrapper = _styledComponents2.default.div(_templateObject, _styles
 
 var TypePanelWrapper = _styledComponents2.default.div(_templateObject2);
 
-var HUDToggle = _styledComponents2.default.div(_templateObject3, _styles.colors.green, function (props) {
+var HUDToggle = _styledComponents2.default.div(_templateObject3, _styles.colors.brown, function (props) {
     return props.show ? 'block' : 'none';
 });
 
@@ -29722,7 +29721,7 @@ var wrapper = document.getElementById("app");
 if (wrapper) {
     (0, _reactDom.render)(_react2.default.createElement(_App2.default, null), wrapper);
 }
-},{"react":15,"react-dom":16,"./App":3}],160:[function(require,module,exports) {
+},{"react":15,"react-dom":16,"./App":3}],161:[function(require,module,exports) {
 
 var global = (1, eval)('this');
 var OldModule = module.bundle.Module;
@@ -29845,5 +29844,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.require, id);
   });
 }
-},{}]},{},[160,2])
+},{}]},{},[161,2])
 //# sourceMappingURL=/dist/287f1f134213ad70013f53d37fdb683c.map
