@@ -4,22 +4,25 @@ import * as React from 'react'
 import styled from 'styled-components'
 import moment from 'moment'
 import TypePanel from './TypePanel'
-import WritingInfoPanel from './WritingInfoPanel'
+import WritingHUD from './WritingHUD'
 import { colors } from '../styles'
 
 const WritingViewWrapper = styled.div`
     width: 100%;
     height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
     background-color: ${colors.cream};
 `
 
 const TypePanelWrapper = styled.div`
     width: 100%;
     height: 100%;
-    max-width: 800px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    flex-basis: 0;
+
+    & > * { max-width: 800px; }
 
     @media screen and (max-width: 767px) {
         padding: 10px 10px;   
@@ -30,46 +33,46 @@ const TypePanelWrapper = styled.div`
     }
 `
 
-const NotificationBarDiv = styled.div`
+const HUDToggle = styled.div`
     position: fixed;
-    width: 100vw;
-    left: 0;
-    bottom: ${props => props.show ? 0 : -100}px;
-    height: ${props => props.useFullScreen ? '100%' : '100px'};
-    transition: 0.5s ease all;
+    top: 10px;
+    right: 10px;
+    color: ${colors.green};
+    display: ${props => props.show ? 'block' : 'none'};
+    cursor: pointer;
 `
 
 type PropsType = {
     totalWriteTime: number,
+    onCompletion: () => void
 }
 
 type StateType = {
-    state: 'writing' | 'time-end' | 'done',
+    state: 'writing' | 'done',
     startTime: number,
     remainingTime: number,
-    showInfoBar: boolean
+    showHUD: boolean,
+    showHUDToggle: boolean,
+    actionBasedHUD: boolean
 }
 
 export default class WritingView extends React.Component<PropsType> {
 
-    // typePanel: ?HTMLTextAreaElement
-    // timerInterval: ?(() => void)
+    typePanel: ?HTMLTextAreaElement
+    timerInterval: ?(() => void)
 
     constructor(props: PropsType) {
         super(props)
 
         this.state = {
-            totalWriteTime: props.totalWriteTime,
+            totalWriteTime: 2000,
             startTime: Date.now(),
-            remainingTime: props.totalWriteTime,
-            showInfoBar: true,
-            state: 'writing'
+            remainingTime: 2000,
+            showHUD: true,
+            showHUDToggle: false,
+            actionBasedHUD: true,
+            writingState: 'writing'
         }
-
-        this.updateRemainingTime = this.updateRemainingTime.bind(this)
-        this.handleKeyDown = this.handleKeyDown.bind(this)
-        this.handleMouseMove = this.handleMouseMove.bind(this)
-        this.handleDoneClick = this.handleDoneClick.bind(this)
     }
 
     componentDidMount() {
@@ -83,44 +86,88 @@ export default class WritingView extends React.Component<PropsType> {
         }
     }
 
-    handleKeyDown() {
-        this.setState({ showInfoBar: false })
-    }
-
-    handleMouseMove() {
-        this.setState({ showInfoBar: true })
-    }
-
-    handleDoneClick() {
-        const backspaceTillEmpty = () => {
-            const currValue = this.typePanel.value
-            if (currValue.length === 0) {
-                clearInterval(backspaceTillEmpty)
-                this.setState({
-                    state: 'done'
-                })
-            }
-            this.typePanel.value = currValue.slice(0,-1)
+    handleKeyDown = () => {
+        if (this.state.actionBasedHUD) {
+            this.setState({ showHUD: false })
         }
-        setInterval(backspaceTillEmpty, 10)
+
+        if (this.state.writingState === 'done') {
+            this.setState({ showHUDToggle: false})
+        }
     }
 
-    updateRemainingTime() {
+    handleMouseMove = () => {
+        if (this.state.actionBasedHUD) {
+            this.setState({ showHUD: true })
+        }
+
+        if (this.state.writingState === 'done') {
+            this.setState({ showHUDToggle: true })
+        }
+    }
+
+    animateErasure() {
+        if (!this.typePanel) return
+        const numCharacters = this.typePanel.value.length
+
+        const TOTAL_TIME = 5000 // ms
+        const frequency = Math.min(TOTAL_TIME / numCharacters, 100)
+
+        const backspaceTillEmpty = setInterval(() => {
+            if (this.typePanel) {
+                const currValue = this.typePanel.value
+                if (currValue.length === 0) {
+                    clearInterval(backspaceTillEmpty)
+                    this.props.onCompletion()
+                } else {
+                    this.typePanel.value = currValue.slice(0, -1)
+                }
+            } else {
+                clearInterval(backspaceTillEmpty)
+            }
+        }, frequency)
+    }
+
+    handleDoneClick = () => {
+        this.setState({
+            showHUD: false
+        })
+        this.animateErasure()
+    }
+
+    handleWriteMoreClick = () => {
+        this.setState({ 
+            showHUD: false,
+            showHUDToggle: true,
+        })
+    }
+
+    toggleHUD = () => {
+        this.setState({ showHUD: !this.state.showHUD })
+    }
+
+    endWriting() {
+        this.setState({
+            remainingTime: 0,
+            actionBasedHUD: false,
+            showHUD: true,
+            state: (this.typePanel && this.typePanel.value.length === 0) ? 'done' : 'done'
+        })
+
+        if (this.timerInterval) {
+            clearInterval(this.timerInterval)
+        }
+    }
+
+    updateRemainingTime = () => {
         if (this.state.remainingTime <= 0) {
-            const nextState = { remainingTime: 0 }
-            if (this.typePanel && this.typePanel.value.length === 0) {
-                nextState.state = 'done'
-            }
-            this.setState(nextState)
-            if (this.timerInterval) {
-                clearInterval(this.timerInterval)
-            }
+            this.endWriting()
         } else {
             const remainingTime = this.state.totalWriteTime - (Date.now() - this.state.startTime)
 
             const nextState = { remainingTime }
             if (remainingTime === 0) {
-                nextState.process = 'time-end'
+                nextState.process = 'done'
                 this.animateEnd()
             }
 
@@ -130,7 +177,7 @@ export default class WritingView extends React.Component<PropsType> {
 
     render() {
         return (
-            <WritingViewWrapper>
+            <WritingViewWrapper showHUD={this.state.showHUD || this.state.remainingTime === 0}>
                 <TypePanelWrapper>
                     <TypePanel 
                         innerRef={(ta: HTMLTextAreaElement) => { this.typePanel = ta }}
@@ -139,16 +186,17 @@ export default class WritingView extends React.Component<PropsType> {
                         onKeyDown={this.handleKeyDown}
                     />
                 </TypePanelWrapper>
-                <NotificationBarDiv 
-                    show={this.state.showInfoBar || this.state.remainingTime === 0} 
-                    useFullScreen={this.state.state === 'done'}
-                >
-                    <WritingInfoPanel 
-                        onDoneClick={this.handleDoneClick}
-                        timeLeft={this.state.remainingTime}
-                        writeState={this.state.state}
-                    />
-                </NotificationBarDiv>
+                <WritingHUD 
+                    onDoneClick={this.handleDoneClick}
+                    onWriteMoreClick={this.handleWriteMoreClick}
+                    totalTime={this.state.totalWriteTime}
+                    timeLeft={this.state.remainingTime}
+                    showHUD={this.state.showHUD}
+                />
+
+                <HUDToggle show={this.state.showHUDToggle && !this.state.showHUD} onClick={this.toggleHUD}>
+                    I'm done now
+                </HUDToggle>
             </WritingViewWrapper>
         )
     }

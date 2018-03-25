@@ -2,6 +2,7 @@
 // @flow
 
 import styled from 'styled-components'
+import { colors } from '../styles'
 
 export default styled.textarea`
     width: 100%;
@@ -11,4 +12,18 @@ export default styled.textarea`
     font-size: 24px;
     line-height: ${1.37 * 24}px;
     outline: none;
+    resize: none;
+
+    ::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: ${colors.green};
+        border-radius: 6px;
+    }
 `

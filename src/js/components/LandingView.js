@@ -29,14 +29,14 @@ const TimeSpecifier = styled.div`
 
     @media screen and (max-width: 767px) {
         flex-direction: column;
+        align-items: center;
     }
 
     @media screen and (min-width: 768px) {
         flex-direction: row;
+        align-items: flex-end;
     }
 
-    justify-content: center;
-    align-items: center;
     & > * {
         margin: 5px;
     }

@@ -40,7 +40,7 @@ export default function(props: PropsType) {
   return (
     <InputElement
       type='number'
-      min={0}
+      min={1}
       width={props.width}
       value={props.value}
       onChange={props.onChange}

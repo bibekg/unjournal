@@ -4,6 +4,7 @@ import * as React from 'react'
 import styled, { injectGlobal } from 'styled-components'
 import LandingView from './components/LandingView'
 import WritingView from './components/WritingView'
+import CompletionView from './components/CompletionView'
 
 injectGlobal([`
   body {
@@ -11,6 +12,7 @@ injectGlobal([`
     margin: 0;
     width: 100%;
     height: 100%;
+    overflow: hidden;
   }
 
   body.disable-scroll {
@@ -44,6 +46,7 @@ class App extends React.Component<PropsType, StateType> {
             totalWriteTime: null
         }
         this.handleStartRequest = this.handleStartRequest.bind(this)
+        this.handleCompletion = this.handleCompletion.bind(this)
     }
 
     handleStartRequest(time: number) {
@@ -53,10 +56,17 @@ class App extends React.Component<PropsType, StateType> {
         })
     }
 
+    handleCompletion() {
+        this.setState({
+            currentView: 'completion'
+        })
+    }
+
     render() {
         const renderer = {
             landing: () => <LandingView onStartRequest={this.handleStartRequest} />,
-            writing: () => <WritingView totalWriteTime={this.state.totalWriteTime} />
+            writing: () => <WritingView totalWriteTime={this.state.totalWriteTime} onCompletion={this.handleCompletion} />,
+            completion: () => <CompletionView />
         }[this.state.currentView]
 
         return (

@@ -71,7 +71,7 @@ require = (function (modules, cache, entry) {
 
   // Override the current require with this new one
   return newRequire;
-})({30:[function(require,module,exports) {
+})({116:[function(require,module,exports) {
 /*
 object-assign
 (c) Sindre Sorhus
@@ -163,7 +163,7 @@ module.exports = shouldUseNative() ? Object.assign : function (target, source) {
 	return to;
 };
 
-},{}],145:[function(require,module,exports) {
+},{}],141:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -181,7 +181,7 @@ if ('development' !== 'production') {
 }
 
 module.exports = emptyObject;
-},{}],138:[function(require,module,exports) {
+},{}],139:[function(require,module,exports) {
 "use strict";
 
 /**
@@ -218,7 +218,7 @@ emptyFunction.thatReturnsArgument = function (arg) {
 };
 
 module.exports = emptyFunction;
-},{}],19:[function(require,module,exports) {
+},{}],18:[function(require,module,exports) {
 /** @license React v16.2.0
  * react.production.min.js
  *
@@ -241,7 +241,7 @@ var U={Children:{map:function(a,b,e){if(null==a)return a;var c=[];T(a,c,null,b,e
 d=a.key,g=a.ref,k=a._owner;if(null!=b){void 0!==b.ref&&(g=b.ref,k=G.current);void 0!==b.key&&(d=""+b.key);if(a.type&&a.type.defaultProps)var f=a.type.defaultProps;for(h in b)H.call(b,h)&&!I.hasOwnProperty(h)&&(c[h]=void 0===b[h]&&void 0!==f?f[h]:b[h])}var h=arguments.length-2;if(1===h)c.children=e;else if(1<h){f=Array(h);for(var l=0;l<h;l++)f[l]=arguments[l+2];c.children=f}return{$$typeof:r,type:a.type,key:d,ref:g,props:c,_owner:k}},createFactory:function(a){var b=J.bind(null,a);b.type=a;return b},
 isValidElement:K,version:"16.2.0",__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED:{ReactCurrentOwner:G,assign:m}},V=Object.freeze({default:U}),W=V&&U||V;module.exports=W["default"]?W["default"]:W;
 
-},{"object-assign":30,"fbjs/lib/emptyObject":145,"fbjs/lib/emptyFunction":138}],146:[function(require,module,exports) {
+},{"object-assign":116,"fbjs/lib/emptyObject":141,"fbjs/lib/emptyFunction":139}],142:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -295,7 +295,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 }
 
 module.exports = invariant;
-},{}],147:[function(require,module,exports) {
+},{}],140:[function(require,module,exports) {
 /**
  * Copyright (c) 2014-present, Facebook, Inc.
  *
@@ -358,7 +358,7 @@ if ('development' !== 'production') {
 }
 
 module.exports = warning;
-},{"./emptyFunction":138}],72:[function(require,module,exports) {
+},{"./emptyFunction":139}],137:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -372,7 +372,7 @@ var ReactPropTypesSecret = 'SECRET_DO_NOT_PASS_THIS_OR_YOU_WILL_BE_FIRED';
 
 module.exports = ReactPropTypesSecret;
 
-},{}],71:[function(require,module,exports) {
+},{}],136:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -432,7 +432,7 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
 }
 
 module.exports = checkPropTypes;
-},{"fbjs/lib/invariant":146,"fbjs/lib/warning":147,"./lib/ReactPropTypesSecret":72}],20:[function(require,module,exports) {
+},{"fbjs/lib/invariant":142,"fbjs/lib/warning":140,"./lib/ReactPropTypesSecret":137}],19:[function(require,module,exports) {
 /** @license React v16.2.0
  * react.development.js
  *
@@ -1784,7 +1784,7 @@ if ('development' !== "production") {
     module.exports = react;
   })();
 }
-},{"object-assign":30,"fbjs/lib/emptyObject":145,"fbjs/lib/invariant":146,"fbjs/lib/warning":147,"fbjs/lib/emptyFunction":138,"prop-types/checkPropTypes":71}],16:[function(require,module,exports) {
+},{"object-assign":116,"fbjs/lib/emptyObject":141,"fbjs/lib/invariant":142,"fbjs/lib/warning":140,"fbjs/lib/emptyFunction":139,"prop-types/checkPropTypes":136}],16:[function(require,module,exports) {
 'use strict';
 
 if ('development' === 'production') {
@@ -1792,7 +1792,7 @@ if ('development' === 'production') {
 } else {
   module.exports = require('./cjs/react.development.js');
 }
-},{"./cjs/react.production.min.js":19,"./cjs/react.development.js":20}],143:[function(require,module,exports) {
+},{"./cjs/react.production.min.js":18,"./cjs/react.development.js":19}],143:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -1826,7 +1826,7 @@ var ExecutionEnvironment = {
 };
 
 module.exports = ExecutionEnvironment;
-},{}],139:[function(require,module,exports) {
+},{}],146:[function(require,module,exports) {
 'use strict';
 
 /**
@@ -1901,7 +1901,7 @@ var EventListener = {
 };
 
 module.exports = EventListener;
-},{"./emptyFunction":138}],140:[function(require,module,exports) {
+},{"./emptyFunction":139}],145:[function(require,module,exports) {
 'use strict';
 
 /**
@@ -1938,7 +1938,7 @@ function getActiveElement(doc) /*?DOMElement*/{
 }
 
 module.exports = getActiveElement;
-},{}],141:[function(require,module,exports) {
+},{}],147:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -2004,7 +2004,7 @@ function shallowEqual(objA, objB) {
 }
 
 module.exports = shallowEqual;
-},{}],153:[function(require,module,exports) {
+},{}],154:[function(require,module,exports) {
 'use strict';
 
 /**
@@ -2027,7 +2027,7 @@ function isNode(object) {
 }
 
 module.exports = isNode;
-},{}],150:[function(require,module,exports) {
+},{}],151:[function(require,module,exports) {
 'use strict';
 
 /**
@@ -2050,7 +2050,7 @@ function isTextNode(object) {
 }
 
 module.exports = isTextNode;
-},{"./isNode":153}],142:[function(require,module,exports) {
+},{"./isNode":154}],144:[function(require,module,exports) {
 'use strict';
 
 /**
@@ -2088,7 +2088,7 @@ function containsNode(outerNode, innerNode) {
 }
 
 module.exports = containsNode;
-},{"./isTextNode":150}],144:[function(require,module,exports) {
+},{"./isTextNode":151}],148:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -2113,7 +2113,7 @@ function focusNode(node) {
 }
 
 module.exports = focusNode;
-},{}],17:[function(require,module,exports) {
+},{}],20:[function(require,module,exports) {
 /** @license React v16.2.0
  * react-dom.production.min.js
  *
@@ -2344,7 +2344,7 @@ var Sg={createPortal:Qg,findDOMNode:function(a){if(null==a)return null;if(1===a.
 E("40");return a._reactRootContainer?(Z.unbatchedUpdates(function(){Pg(null,null,a,!1,function(){a._reactRootContainer=null})}),!0):!1},unstable_createPortal:Qg,unstable_batchedUpdates:tc,unstable_deferredUpdates:Z.deferredUpdates,flushSync:Z.flushSync,__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED:{EventPluginHub:mb,EventPluginRegistry:Va,EventPropagators:Cb,ReactControlledComponent:qc,ReactDOMComponentTree:sb,ReactDOMEventListener:xd}};
 Z.injectIntoDevTools({findFiberByHostInstance:pb,bundleType:0,version:"16.2.0",rendererPackageName:"react-dom"});var Tg=Object.freeze({default:Sg}),Ug=Tg&&Sg||Tg;module.exports=Ug["default"]?Ug["default"]:Ug;
 
-},{"react":16,"fbjs/lib/ExecutionEnvironment":143,"object-assign":30,"fbjs/lib/emptyFunction":138,"fbjs/lib/EventListener":139,"fbjs/lib/getActiveElement":140,"fbjs/lib/shallowEqual":141,"fbjs/lib/containsNode":142,"fbjs/lib/focusNode":144,"fbjs/lib/emptyObject":145}],151:[function(require,module,exports) {
+},{"react":16,"fbjs/lib/ExecutionEnvironment":143,"object-assign":116,"fbjs/lib/emptyFunction":139,"fbjs/lib/EventListener":146,"fbjs/lib/getActiveElement":145,"fbjs/lib/shallowEqual":147,"fbjs/lib/containsNode":144,"fbjs/lib/focusNode":148,"fbjs/lib/emptyObject":141}],153:[function(require,module,exports) {
 'use strict';
 
 /**
@@ -2375,7 +2375,7 @@ function hyphenate(string) {
 }
 
 module.exports = hyphenate;
-},{}],148:[function(require,module,exports) {
+},{}],149:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -2412,7 +2412,7 @@ function hyphenateStyleName(string) {
 }
 
 module.exports = hyphenateStyleName;
-},{"./hyphenate":151}],152:[function(require,module,exports) {
+},{"./hyphenate":153}],152:[function(require,module,exports) {
 "use strict";
 
 /**
@@ -2442,7 +2442,7 @@ function camelize(string) {
 }
 
 module.exports = camelize;
-},{}],149:[function(require,module,exports) {
+},{}],150:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -2480,7 +2480,7 @@ function camelizeStyleName(string) {
 }
 
 module.exports = camelizeStyleName;
-},{"./camelize":152}],18:[function(require,module,exports) {
+},{"./camelize":152}],21:[function(require,module,exports) {
 /** @license React v16.2.0
  * react-dom.development.js
  *
@@ -17838,7 +17838,7 @@ if ('development' !== "production") {
     module.exports = reactDom;
   })();
 }
-},{"react":16,"fbjs/lib/invariant":146,"fbjs/lib/warning":147,"fbjs/lib/ExecutionEnvironment":143,"object-assign":30,"fbjs/lib/emptyFunction":138,"fbjs/lib/EventListener":139,"fbjs/lib/getActiveElement":140,"fbjs/lib/shallowEqual":141,"fbjs/lib/containsNode":142,"fbjs/lib/focusNode":144,"fbjs/lib/emptyObject":145,"prop-types/checkPropTypes":71,"fbjs/lib/hyphenateStyleName":148,"fbjs/lib/camelizeStyleName":149}],15:[function(require,module,exports) {
+},{"react":16,"fbjs/lib/invariant":142,"fbjs/lib/warning":140,"fbjs/lib/ExecutionEnvironment":143,"object-assign":116,"fbjs/lib/emptyFunction":139,"fbjs/lib/EventListener":146,"fbjs/lib/getActiveElement":145,"fbjs/lib/shallowEqual":147,"fbjs/lib/containsNode":144,"fbjs/lib/focusNode":148,"fbjs/lib/emptyObject":141,"prop-types/checkPropTypes":136,"fbjs/lib/hyphenateStyleName":149,"fbjs/lib/camelizeStyleName":150}],17:[function(require,module,exports) {
 'use strict';
 
 function checkDCE() {
@@ -17874,7 +17874,7 @@ if ('development' === 'production') {
 } else {
   module.exports = require('./cjs/react-dom.development.js');
 }
-},{"./cjs/react-dom.production.min.js":17,"./cjs/react-dom.development.js":18}],137:[function(require,module,exports) {
+},{"./cjs/react-dom.production.min.js":20,"./cjs/react-dom.development.js":21}],138:[function(require,module,exports) {
 /*!
  * isobject <https://github.com/jonschlinkert/isobject>
  *
@@ -17888,7 +17888,7 @@ module.exports = function isObject(val) {
   return val != null && typeof val === 'object' && Array.isArray(val) === false;
 };
 
-},{}],31:[function(require,module,exports) {
+},{}],128:[function(require,module,exports) {
 /*!
  * is-plain-object <https://github.com/jonschlinkert/is-plain-object>
  *
@@ -17927,7 +17927,7 @@ module.exports = function isPlainObject(o) {
   return true;
 };
 
-},{"isobject":137}],33:[function(require,module,exports) {
+},{"isobject":138}],129:[function(require,module,exports) {
 /*
  *          __        ___
  *    _____/ /___  __/ (_)____
@@ -19553,7 +19553,7 @@ module.exports = function isPlainObject(o) {
 	return stylis
 }));
 
-},{}],32:[function(require,module,exports) {
+},{}],130:[function(require,module,exports) {
 (function (factory) {
 	typeof exports === 'object' && typeof module !== 'undefined' ? (module['exports'] = factory()) :
 		typeof define === 'function' && define['amd'] ? define(factory()) :
@@ -19603,7 +19603,7 @@ module.exports = function isPlainObject(o) {
 	}
 }))
 
-},{}],36:[function(require,module,exports) {
+},{}],134:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -20120,7 +20120,7 @@ module.exports = function (isValidElement, throwOnDirectAccess) {
 
   return ReactPropTypes;
 };
-},{"fbjs/lib/emptyFunction":138,"fbjs/lib/invariant":146,"fbjs/lib/warning":147,"object-assign":30,"./lib/ReactPropTypesSecret":72,"./checkPropTypes":71}],37:[function(require,module,exports) {
+},{"fbjs/lib/emptyFunction":139,"fbjs/lib/invariant":142,"fbjs/lib/warning":140,"object-assign":116,"./lib/ReactPropTypesSecret":137,"./checkPropTypes":136}],135:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -20180,7 +20180,7 @@ module.exports = function() {
   return ReactPropTypes;
 };
 
-},{"fbjs/lib/emptyFunction":138,"fbjs/lib/invariant":146,"./lib/ReactPropTypesSecret":72}],34:[function(require,module,exports) {
+},{"fbjs/lib/emptyFunction":139,"fbjs/lib/invariant":142,"./lib/ReactPropTypesSecret":137}],132:[function(require,module,exports) {
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -20204,7 +20204,7 @@ if ('development' !== 'production') {
   // http://fb.me/prop-types-in-prod
   module.exports = require('./factoryWithThrowingShims')();
 }
-},{"./factoryWithTypeCheckers":36,"./factoryWithThrowingShims":37}],35:[function(require,module,exports) {
+},{"./factoryWithTypeCheckers":134,"./factoryWithThrowingShims":135}],131:[function(require,module,exports) {
 /**
  * Copyright 2015, Yahoo! Inc.
  * Copyrights licensed under the New BSD License. See the accompanying LICENSE file for terms.
@@ -20256,7 +20256,7 @@ module.exports = function hoistNonReactStatics(targetComponent, sourceComponent,
     return targetComponent;
 };
 
-},{}],21:[function(require,module,exports) {
+},{}],22:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22484,7 +22484,7 @@ exports.StyleSheetManager = StyleSheetManager;
 exports.__DO_NOT_USE_OR_YOU_WILL_BE_HAUNTED_BY_SPOOKY_GHOSTS = __DO_NOT_USE_OR_YOU_WILL_BE_HAUNTED_BY_SPOOKY_GHOSTS;
 exports.default = styled;
 //# sourceMappingURL=styled-components.browser.es.js.map
-},{"is-plain-object":31,"stylis":33,"stylis-rule-sheet":32,"react":16,"prop-types":34,"hoist-non-react-statics":35}],12:[function(require,module,exports) {
+},{"is-plain-object":128,"stylis":129,"stylis-rule-sheet":130,"react":16,"prop-types":132,"hoist-non-react-statics":131}],15:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22498,14 +22498,14 @@ var colors = exports.colors = {
     black: '#717076',
     grey: '#d4dad1'
 };
-},{}],7:[function(require,module,exports) {
+},{}],11:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n    border-radius: 10px;\n    border: none;\n    background-color: ', ';\n    color: ', ';\n    padding: 10px 30px;\n    font-size: ', 'px;\n    cursor: pointer;\n'], ['\n    border-radius: 10px;\n    border: none;\n    background-color: ', ';\n    color: ', ';\n    padding: 10px 30px;\n    font-size: ', 'px;\n    cursor: pointer;\n']);
+var _templateObject = _taggedTemplateLiteral(['\n    border-radius: 3px;\n    border: none;\n    background-color: ', ';\n    color: ', ';\n    padding: 10px 30px;\n    font-size: ', 'px;\n    cursor: pointer;\n'], ['\n    border-radius: 3px;\n    border: none;\n    background-color: ', ';\n    color: ', ';\n    padding: 10px 30px;\n    font-size: ', 'px;\n    cursor: pointer;\n']);
 
 var _react = require('react');
 
@@ -22524,9 +22524,9 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
 exports.default = _styledComponents2.default.button(_templateObject, _styles.colors.purple, _styles.colors.white, function (props) {
-    return props.fontSize || 24;
+    return props.fontSize || 18;
 });
-},{"react":16,"styled-components":21,"../styles":12}],8:[function(require,module,exports) {
+},{"react":16,"styled-components":22,"../styles":15}],9:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22552,14 +22552,14 @@ exports.default = _styledComponents2.default.h1(_templateObject, function (props
 }, function (props) {
   return props.underline ? 'underline' : 'none';
 });
-},{"styled-components":21,"../styles":12}],9:[function(require,module,exports) {
+},{"styled-components":22,"../styles":15}],10:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n    font-size: ', 'px;\n    font-weight: ', ';\n    line-height: ', 'px;\n    color: ', ';\n    ', '\n    text-decoration: ', ';\n    cursor: ', ';\n    letter-spacing: 0.8px;\n    margin: 5px 0;\n'], ['\n    font-size: ', 'px;\n    font-weight: ', ';\n    line-height: ', 'px;\n    color: ', ';\n    ', '\n    text-decoration: ', ';\n    cursor: ', ';\n    letter-spacing: 0.8px;\n    margin: 5px 0;\n']);
+var _templateObject = _taggedTemplateLiteral(['\n    font-size: ', 'px;\n    font-weight: ', ';\n    line-height: ', 'px;\n    color: ', ';\n    ', '\n    text-decoration: ', ';\n    cursor: ', ';\n    text-align: ', ';\n    letter-spacing: 0.8px;\n    margin: 5px 0;\n'], ['\n    font-size: ', 'px;\n    font-weight: ', ';\n    line-height: ', 'px;\n    color: ', ';\n    ', '\n    text-decoration: ', ';\n    cursor: ', ';\n    text-align: ', ';\n    letter-spacing: 0.8px;\n    margin: 5px 0;\n']);
 
 var _styledComponents = require('styled-components');
 
@@ -22585,15 +22585,17 @@ exports.default = _styledComponents2.default.p(_templateObject, function (props)
     return props.underline ? 'underline' : 'none';
 }, function (props) {
     return props.pointer ? 'pointer' : 'default';
+}, function (props) {
+    return props.center ? 'center' : 'left';
 });
-},{"styled-components":21,"../styles":12}],11:[function(require,module,exports) {
+},{"styled-components":22,"../styles":15}],14:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 var placeholderMixin = exports.placeholderMixin = "\n  font-family: 'Montserrat', sans-serif;\n  ::-webkit-input-placeholder {\n    color: ##AAAAAA;\n    opacity: 0.5;\n    -webkit-transition: opacity 0.35s ease-in-out;\n    transition: opacity 0.35s ease-in-out;\n  }\n  :-moz-placeholder {\n    color: #000;\n    opacity: 0.5;\n    -moz-transition: opacity 0.35s ease-in-out;\n    transition: opacity 0.35s ease-in-out;\n  }\n  ::-moz-placeholder {\n    color: #000;\n    opacity: 0.5;\n    -moz-transition: opacity 0.35s ease-in-out;\n    transition: opacity 0.35s ease-in-out;\n  }\n  :-ms-input-placeholder {\n    color: #000;\n    opacity: 0.5;\n    -ms-transition: opacity 0.35s ease-in-out;\n    transition: opacity 0.35s ease-in-out;\n  }\n\n  :hover::-webkit-input-placeholder {\n    opacity: 0.75;\n    -webkit-transition: opacity 0.35s ease-in-out;\n    transition: opacity 0.35s ease-in-out;\n  }\n  :hover:-moz-placeholder {\n    opacity: 0.75;\n    -moz-transition: opacity 0.35s ease-in-out;\n    transition: opacity 0.35s ease-in-out;\n  }\n  :hover::-moz-placeholder {\n    opacity: 0.75;\n    -moz-transition: opacity 0.35s ease-in-out;\n    transition: opacity 0.35s ease-in-out;\n  }\n  :hover:-ms-input-placeholder {\n    opacity: 0.75;\n    -ms-transition: opacity 0.35s ease-in-out;\n    transition: opacity 0.35s ease-in-out;\n  }\n\n  :focus::-webkit-input-placeholder {\n    opacity: 0;\n    -webkit-transition: opacity 0.35s ease-in-out;\n    transition: opacity 0.35s ease-in-out;\n  }\n  :focus:-moz-placeholder {\n    opacity: 0;\n    -moz-transition: opacity 0.35s ease-in-out;\n    transition: opacity 0.35s ease-in-out;\n  }\n  :focus::-moz-placeholder {\n    opacity: 0;\n    -moz-transition: opacity 0.35s ease-in-out;\n    transition: opacity 0.35s ease-in-out;\n  }\n  :focus:-ms-input-placeholder {\n    opacity: 0;\n    -ms-transition: opacity 0.35s ease-in-out;\n    transition: opacity 0.35s ease-in-out;\n  }\n";
-},{}],10:[function(require,module,exports) {
+},{}],12:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22605,7 +22607,7 @@ var _templateObject = _taggedTemplateLiteral(['\n  width: ', ';\n  padding: 10px
 exports.default = function (props) {
   return React.createElement(InputElement, {
     type: 'number',
-    min: 0,
+    min: 1,
     width: props.width,
     value: props.value,
     onChange: props.onChange
@@ -22633,7 +22635,7 @@ function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defi
 var InputElement = _styledComponents2.default.input(_templateObject, function (props) {
   return props.width ? props.width + 'px' : '100%';
 }, _styles.colors.cream, _styles.colors.cream, _mixins.placeholderMixin);
-},{"react":16,"styled-components":21,"../styles":12,"../styles/mixins":11}],4:[function(require,module,exports) {
+},{"react":16,"styled-components":22,"../styles":15,"../styles/mixins":14}],4:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22644,7 +22646,7 @@ var _createClass = function () { function defineProperties(target, props) { for 
 
 var _templateObject = _taggedTemplateLiteral(['\n    background-color: ', ';\n    width: 100%;\n    height: 100%;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n'], ['\n    background-color: ', ';\n    width: 100%;\n    height: 100%;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n']),
     _templateObject2 = _taggedTemplateLiteral(['\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n'], ['\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    justify-content: center;\n']),
-    _templateObject3 = _taggedTemplateLiteral(['\n    display: flex;\n\n    @media screen and (max-width: 767px) {\n        flex-direction: column;\n    }\n\n    @media screen and (min-width: 768px) {\n        flex-direction: row;\n    }\n\n    justify-content: center;\n    align-items: center;\n    & > * {\n        margin: 5px;\n    }\n\n    margin-bottom: 20px;\n'], ['\n    display: flex;\n\n    @media screen and (max-width: 767px) {\n        flex-direction: column;\n    }\n\n    @media screen and (min-width: 768px) {\n        flex-direction: row;\n    }\n\n    justify-content: center;\n    align-items: center;\n    & > * {\n        margin: 5px;\n    }\n\n    margin-bottom: 20px;\n']);
+    _templateObject3 = _taggedTemplateLiteral(['\n    display: flex;\n\n    @media screen and (max-width: 767px) {\n        flex-direction: column;\n        align-items: center;\n    }\n\n    @media screen and (min-width: 768px) {\n        flex-direction: row;\n        align-items: flex-end;\n    }\n\n    & > * {\n        margin: 5px;\n    }\n\n    margin-bottom: 20px;\n'], ['\n    display: flex;\n\n    @media screen and (max-width: 767px) {\n        flex-direction: column;\n        align-items: center;\n    }\n\n    @media screen and (min-width: 768px) {\n        flex-direction: row;\n        align-items: flex-end;\n    }\n\n    & > * {\n        margin: 5px;\n    }\n\n    margin-bottom: 20px;\n']);
 
 var _react = require('react');
 
@@ -22765,7 +22767,7 @@ var LandingView = function (_React$Component) {
 }(React.Component);
 
 exports.default = LandingView;
-},{"react":16,"styled-components":21,"../styles":12,"./Button":7,"./Title":8,"./Text":9,"./NumberInput":10}],23:[function(require,module,exports) {
+},{"react":16,"styled-components":22,"../styles":15,"./Button":11,"./Title":9,"./Text":10,"./NumberInput":12}],24:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22786,7 +22788,7 @@ function hooks() {
 function setHookCallback(callback) {
     hookCallback = callback;
 }
-},{}],80:[function(require,module,exports) {
+},{}],70:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22796,7 +22798,7 @@ exports.default = isArray;
 function isArray(input) {
     return input instanceof Array || Object.prototype.toString.call(input) === '[object Array]';
 }
-},{}],125:[function(require,module,exports) {
+},{}],117:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22808,7 +22810,7 @@ function isObject(input) {
     // input != null
     return input != null && Object.prototype.toString.call(input) === '[object Object]';
 }
-},{}],126:[function(require,module,exports) {
+},{}],118:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22828,7 +22830,7 @@ function isObjectEmpty(obj) {
         return true;
     }
 }
-},{}],75:[function(require,module,exports) {
+},{}],87:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22838,7 +22840,7 @@ exports.default = isUndefined;
 function isUndefined(input) {
     return input === void 0;
 }
-},{}],110:[function(require,module,exports) {
+},{}],94:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22858,7 +22860,7 @@ exports.default = isDate;
 function isDate(input) {
     return input instanceof Date || Object.prototype.toString.call(input) === '[object Date]';
 }
-},{}],127:[function(require,module,exports) {
+},{}],119:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22873,7 +22875,7 @@ function map(arr, fn) {
     }
     return res;
 }
-},{}],76:[function(require,module,exports) {
+},{}],89:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22883,7 +22885,7 @@ exports.default = hasOwnProp;
 function hasOwnProp(a, b) {
     return Object.prototype.hasOwnProperty.call(a, b);
 }
-},{}],77:[function(require,module,exports) {
+},{}],66:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22914,7 +22916,7 @@ function extend(a, b) {
 
     return a;
 }
-},{"./has-own-prop":76}],39:[function(require,module,exports) {
+},{"./has-own-prop":89}],32:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -22927,7 +22929,7 @@ var _fromAnything = require('./from-anything');
 function createUTC(input, format, locale, strict) {
     return (0, _fromAnything.createLocalOrUTC)(input, format, locale, strict, true).utc();
 }
-},{"./from-anything":74}],78:[function(require,module,exports) {
+},{"./from-anything":65}],67:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22960,7 +22962,7 @@ function getParsingFlags(m) {
     }
     return m._pf;
 }
-},{}],79:[function(require,module,exports) {
+},{}],68:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -22985,7 +22987,7 @@ if (Array.prototype.some) {
 }
 
 exports.default = some;
-},{}],41:[function(require,module,exports) {
+},{}],33:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23041,7 +23043,7 @@ function createInvalid(flags) {
 
     return m;
 }
-},{"../utils/extend":77,"./utc":39,"../create/parsing-flags":78,"../utils/some":79}],40:[function(require,module,exports) {
+},{"../utils/extend":66,"./utc":32,"../create/parsing-flags":67,"../utils/some":68}],48:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23139,7 +23141,7 @@ function Moment(config) {
 function isMoment(obj) {
     return obj instanceof Moment || obj != null && obj._isAMomentObject != null;
 }
-},{"../utils/hooks":23,"../utils/has-own-prop":76,"../utils/is-undefined":75,"../create/parsing-flags":78}],134:[function(require,module,exports) {
+},{"../utils/hooks":24,"../utils/has-own-prop":89,"../utils/is-undefined":87,"../create/parsing-flags":67}],126:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -23154,7 +23156,7 @@ function absFloor(number) {
         return Math.floor(number);
     }
 }
-},{}],98:[function(require,module,exports) {
+},{}],108:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23178,7 +23180,7 @@ function toInt(argumentForCoercion) {
 
     return value;
 }
-},{"./abs-floor":134}],99:[function(require,module,exports) {
+},{"./abs-floor":126}],88:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23205,7 +23207,7 @@ function compareArrays(array1, array2, dontConvert) {
     }
     return diffs + lengthDiff;
 }
-},{"./to-int":98}],50:[function(require,module,exports) {
+},{"./to-int":108}],42:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23276,7 +23278,7 @@ function deprecateSimple(name, msg) {
 
 _hooks.hooks.suppressDeprecationWarnings = false;
 _hooks.hooks.deprecationHandler = null;
-},{"./extend":77,"./hooks":23,"./is-undefined":75}],46:[function(require,module,exports) {
+},{"./extend":66,"./hooks":24,"./is-undefined":87}],38:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23286,7 +23288,7 @@ exports.default = isFunction;
 function isFunction(input) {
     return input instanceof Function || Object.prototype.toString.call(input) === '[object Function]';
 }
-},{}],107:[function(require,module,exports) {
+},{}],90:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23354,7 +23356,7 @@ function mergeConfigs(parentConfig, childConfig) {
     }
     return res;
 }
-},{"../utils/is-function":46,"../utils/extend":77,"../utils/is-object":125,"../utils/has-own-prop":76}],100:[function(require,module,exports) {
+},{"../utils/is-function":38,"../utils/extend":66,"../utils/is-object":117,"../utils/has-own-prop":89}],92:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -23366,7 +23368,7 @@ function Locale(config) {
         this.set(config);
     }
 }
-},{}],108:[function(require,module,exports) {
+},{}],91:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23398,7 +23400,7 @@ if (Object.keys) {
 }
 
 exports.default = keys;
-},{"./has-own-prop":76}],101:[function(require,module,exports) {
+},{"./has-own-prop":89}],95:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23426,7 +23428,7 @@ function calendar(key, mom, now) {
     var output = this._calendar[key] || this._calendar['sameElse'];
     return (0, _isFunction2.default)(output) ? output.call(mom, now) : output;
 }
-},{"../utils/is-function":46}],102:[function(require,module,exports) {
+},{"../utils/is-function":38}],96:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23456,7 +23458,7 @@ function longDateFormat(key) {
 
     return this._longDateFormat[key];
 }
-},{}],103:[function(require,module,exports) {
+},{}],97:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23468,7 +23470,7 @@ var defaultInvalidDate = exports.defaultInvalidDate = 'Invalid date';
 function invalidDate() {
     return this._invalidDate;
 }
-},{}],104:[function(require,module,exports) {
+},{}],98:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23481,7 +23483,7 @@ var defaultDayOfMonthOrdinalParse = exports.defaultDayOfMonthOrdinalParse = /\d{
 function ordinal(number) {
     return this._ordinal.replace('%d', number);
 }
-},{}],106:[function(require,module,exports) {
+},{}],100:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23523,7 +23525,7 @@ function pastFuture(diff, output) {
     var format = this._relativeTime[diff > 0 ? 'future' : 'past'];
     return (0, _isFunction2.default)(format) ? format(output) : format.replace(/%s/i, output);
 }
-},{"../utils/is-function":46}],70:[function(require,module,exports) {
+},{"../utils/is-function":38}],63:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23566,7 +23568,7 @@ function normalizeObjectUnits(inputObject) {
 
     return normalizedInput;
 }
-},{"../utils/has-own-prop":76}],120:[function(require,module,exports) {
+},{"../utils/has-own-prop":89}],111:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -23590,7 +23592,7 @@ function getPrioritizedUnits(unitsObj) {
     });
     return units;
 }
-},{}],94:[function(require,module,exports) {
+},{}],83:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23603,7 +23605,7 @@ function zeroFill(number, targetLength, forceSign) {
         sign = number >= 0;
     return (sign ? forceSign ? '+' : '' : '-') + Math.pow(10, Math.max(0, zerosToFill)).toString().substr(1) + absNumber;
 }
-},{}],96:[function(require,module,exports) {
+},{}],84:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23716,7 +23718,7 @@ function expandFormat(format, locale) {
 
     return format;
 }
-},{"../utils/zero-fill":94,"../utils/is-function":46}],95:[function(require,module,exports) {
+},{"../utils/zero-fill":83,"../utils/is-function":38}],85:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23787,7 +23789,7 @@ function unescapeFormat(s) {
 function regexEscape(s) {
     return s.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
 }
-},{"../utils/has-own-prop":76,"../utils/is-function":46}],97:[function(require,module,exports) {
+},{"../utils/has-own-prop":89,"../utils/is-function":38}],86:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23841,7 +23843,7 @@ function addTimeToArrayFromToken(token, input, config) {
         tokens[token](input, config._a, config, token);
     }
 }
-},{"../utils/has-own-prop":76,"../utils/is-number":110,"../utils/to-int":98}],119:[function(require,module,exports) {
+},{"../utils/has-own-prop":89,"../utils/is-number":94,"../utils/to-int":108}],110:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -23856,7 +23858,7 @@ var SECOND = exports.SECOND = 5;
 var MILLISECOND = exports.MILLISECOND = 6;
 var WEEK = exports.WEEK = 7;
 var WEEKDAY = exports.WEEKDAY = 8;
-},{}],69:[function(require,module,exports) {
+},{}],62:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -23954,7 +23956,7 @@ var getSetYear = exports.getSetYear = (0, _getSet.makeGetSet)('FullYear', true);
 function getIsLeapYear() {
     return isLeapYear(this.year());
 }
-},{"../moment/get-set":89,"../format/format":96,"./aliases":70,"./priorities":120,"../parse/regex":95,"../parse/token":97,"../utils/hooks":23,"./constants":119,"../utils/to-int":98}],89:[function(require,module,exports) {
+},{"../moment/get-set":77,"../format/format":84,"./aliases":63,"./priorities":111,"../parse/regex":85,"../parse/token":86,"../utils/hooks":24,"./constants":110,"../utils/to-int":108}],77:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24033,7 +24035,7 @@ function stringSet(units, value) {
     }
     return this;
 }
-},{"../units/aliases":70,"../units/priorities":120,"../utils/hooks":23,"../utils/is-function":46,"../units/month":62,"../units/year":69}],123:[function(require,module,exports) {
+},{"../units/aliases":63,"../units/priorities":111,"../utils/hooks":24,"../utils/is-function":38,"../units/month":57,"../units/year":62}],114:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24043,7 +24045,7 @@ exports.default = mod;
 function mod(n, x) {
     return (n % x + x) % x;
 }
-},{}],122:[function(require,module,exports) {
+},{}],113:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24067,7 +24069,7 @@ if (Array.prototype.indexOf) {
 }
 
 exports.default = indexOf;
-},{}],62:[function(require,module,exports) {
+},{}],57:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24406,7 +24408,7 @@ function computeMonthsParse() {
     this._monthsStrictRegex = new RegExp('^(' + longPieces.join('|') + ')', 'i');
     this._monthsShortStrictRegex = new RegExp('^(' + shortPieces.join('|') + ')', 'i');
 }
-},{"../moment/get-set":89,"../utils/has-own-prop":76,"../format/format":96,"./aliases":70,"./priorities":120,"../parse/regex":95,"../parse/token":97,"../utils/hooks":23,"./constants":119,"../utils/to-int":98,"../utils/is-array":80,"../utils/is-number":110,"../utils/mod":123,"../utils/index-of":122,"../create/utc":39,"../create/parsing-flags":78,"../units/year":69}],121:[function(require,module,exports) {
+},{"../moment/get-set":77,"../utils/has-own-prop":89,"../format/format":84,"./aliases":63,"./priorities":111,"../parse/regex":85,"../parse/token":86,"../utils/hooks":24,"./constants":110,"../utils/to-int":108,"../utils/is-array":70,"../utils/is-number":94,"../utils/mod":114,"../utils/index-of":113,"../create/utc":32,"../create/parsing-flags":67,"../units/year":62}],112:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -24435,7 +24437,7 @@ function createUTCDate(y) {
     }
     return date;
 }
-},{}],124:[function(require,module,exports) {
+},{}],115:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24515,7 +24517,7 @@ function weeksInYear(year, dow, doy) {
         weekOffsetNext = firstWeekOffset(year + 1, dow, doy);
     return ((0, _year.daysInYear)(year) - weekOffset + weekOffsetNext) / 7;
 }
-},{"./year":69,"../create/local":38,"../create/date-from-array":121}],68:[function(require,module,exports) {
+},{"./year":62,"../create/local":31,"../create/date-from-array":112}],61:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -24606,7 +24608,7 @@ function getSetISOWeek(input) {
     var week = (0, _weekCalendarUtils.weekOfYear)(this, 1, 4).week;
     return input == null ? week : this.add((input - week) * 7, 'd');
 }
-},{"../format/format":96,"./aliases":70,"./priorities":120,"../parse/regex":95,"../parse/token":97,"../utils/to-int":98,"../create/local":38,"./week-calendar-utils":124}],57:[function(require,module,exports) {
+},{"../format/format":84,"./aliases":63,"./priorities":111,"../parse/regex":85,"../parse/token":86,"../utils/to-int":108,"../create/local":31,"./week-calendar-utils":115}],50:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25014,7 +25016,7 @@ function computeWeekdaysParse() {
     this._weekdaysShortStrictRegex = new RegExp('^(' + shortPieces.join('|') + ')', 'i');
     this._weekdaysMinStrictRegex = new RegExp('^(' + minPieces.join('|') + ')', 'i');
 }
-},{"../format/format":96,"./aliases":70,"./priorities":120,"../parse/regex":95,"../parse/token":97,"../utils/to-int":98,"../utils/is-array":80,"../utils/index-of":122,"../utils/has-own-prop":76,"../create/utc":39,"../create/parsing-flags":78}],59:[function(require,module,exports) {
+},{"../format/format":84,"./aliases":63,"./priorities":111,"../parse/regex":85,"../parse/token":86,"../utils/to-int":108,"../utils/is-array":70,"../utils/index-of":113,"../utils/has-own-prop":89,"../create/utc":32,"../create/parsing-flags":67}],52:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25182,7 +25184,7 @@ function localeMeridiem(hours, minutes, isLower) {
 // a new timezone) makes sense. Adding/subtracting hours does not follow
 // this rule.
 var getSetHour = exports.getSetHour = (0, _getSet.makeGetSet)('Hours', true);
-},{"../moment/get-set":89,"../format/format":96,"./aliases":70,"./priorities":120,"../parse/regex":95,"../parse/token":97,"./constants":119,"../utils/to-int":98,"../utils/zero-fill":94,"../create/parsing-flags":78}],109:[function(require,module,exports) {
+},{"../moment/get-set":77,"../format/format":84,"./aliases":63,"./priorities":111,"../parse/regex":85,"../parse/token":86,"./constants":110,"../utils/to-int":108,"../utils/zero-fill":83,"../create/parsing-flags":67}],93:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25236,7 +25238,7 @@ var baseConfig = exports.baseConfig = {
 
 
 // week
-},{"./calendar":101,"./formats":102,"./invalid":103,"./ordinal":104,"./relative":106,"../units/month":62,"../units/week":68,"../units/day-of-week":57,"../units/hour":59}],48:[function(require,module,exports) {
+},{"./calendar":95,"./formats":96,"./invalid":97,"./ordinal":98,"./relative":100,"../units/month":57,"../units/week":61,"../units/day-of-week":50,"../units/hour":52}],39:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25463,7 +25465,7 @@ function getLocale(key) {
 function listLocales() {
     return (0, _keys2.default)(locales);
 }
-},{"../utils/is-array":80,"../utils/has-own-prop":76,"../utils/is-undefined":75,"../utils/compare-arrays":99,"../utils/deprecate":50,"./set":107,"./constructor":100,"../utils/keys":108,"./base-config":109}],128:[function(require,module,exports) {
+},{"../utils/is-array":70,"../utils/has-own-prop":89,"../utils/is-undefined":87,"../utils/compare-arrays":88,"../utils/deprecate":42,"./set":90,"./constructor":92,"../utils/keys":91,"./base-config":93}],120:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25503,7 +25505,7 @@ function checkOverflow(m) {
 
     return m;
 }
-},{"../units/month":62,"../units/constants":119,"../create/parsing-flags":78}],136:[function(require,module,exports) {
+},{"../units/month":57,"../units/constants":110,"../create/parsing-flags":67}],133:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -25520,7 +25522,7 @@ function defaults(a, b, c) {
     }
     return c;
 }
-},{}],132:[function(require,module,exports) {
+},{}],124:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25690,7 +25692,7 @@ function dayOfYearFromWeekInfo(config) {
         config._dayOfYear = temp.dayOfYear;
     }
 }
-},{"../utils/hooks":23,"./date-from-array":121,"../units/year":69,"../units/week-calendar-utils":124,"../units/constants":119,"./local":38,"../utils/defaults":136,"./parsing-flags":78}],131:[function(require,module,exports) {
+},{"../utils/hooks":24,"./date-from-array":112,"../units/year":62,"../units/week-calendar-utils":115,"../units/constants":110,"./local":31,"../utils/defaults":133,"./parsing-flags":67}],123:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -25913,7 +25915,7 @@ function configFromString(config) {
 _hooks.hooks.createFromInputFallback = (0, _deprecate.deprecate)('value provided is not in a recognized RFC2822 or ISO format. moment construction falls back to js Date(), ' + 'which is not reliable across all browsers and versions. Non RFC2822/ISO date formats are ' + 'discouraged and will be removed in an upcoming major release. Please refer to ' + 'http://momentjs.com/guides/#/warnings/js-date/ for more info.', function (config) {
     config._d = new Date(config._i + (config._useUTC ? ' UTC' : ''));
 });
-},{"./from-string-and-format":130,"./date-from-array":121,"./from-array":132,"../utils/hooks":23,"../utils/deprecate":50,"./parsing-flags":78,"../units/month":62,"../units/day-of-week":57}],130:[function(require,module,exports) {
+},{"./from-string-and-format":122,"./date-from-array":112,"./from-array":124,"../utils/hooks":24,"../utils/deprecate":42,"./parsing-flags":67,"../units/month":57,"../units/day-of-week":50}],122:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -26047,7 +26049,7 @@ function meridiemFixWrap(locale, hour, meridiem) {
         return hour;
     }
 }
-},{"./from-string":131,"./from-array":132,"../parse/regex":95,"../parse/token":97,"../format/format":96,"./check-overflow":128,"../units/constants":119,"../utils/hooks":23,"./parsing-flags":78}],129:[function(require,module,exports) {
+},{"./from-string":123,"./from-array":124,"../parse/regex":85,"../parse/token":86,"../format/format":84,"./check-overflow":120,"../units/constants":110,"../utils/hooks":24,"./parsing-flags":67}],121:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -26110,7 +26112,7 @@ function configFromStringAndArray(config) {
 
     (0, _extend2.default)(config, bestMoment || tempConfig);
 }
-},{"../moment/constructor":40,"./from-string-and-format":130,"./parsing-flags":78,"./valid":41,"../utils/extend":77}],133:[function(require,module,exports) {
+},{"../moment/constructor":48,"./from-string-and-format":122,"./parsing-flags":67,"./valid":33,"../utils/extend":66}],125:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -26140,7 +26142,7 @@ function configFromObject(config) {
 
     (0, _fromArray.configFromArray)(config);
 }
-},{"../units/aliases":70,"./from-array":132,"../utils/map":127}],74:[function(require,module,exports) {
+},{"../units/aliases":63,"./from-array":124,"../utils/map":119}],65:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -26290,7 +26292,7 @@ function createLocalOrUTC(input, format, locale, strict, isUTC) {
 
     return createFromConfig(c);
 }
-},{"../utils/is-array":80,"../utils/is-object":125,"../utils/is-object-empty":126,"../utils/is-undefined":75,"../utils/is-number":110,"../utils/is-date":29,"../utils/map":127,"./valid":41,"../moment/constructor":40,"../locale/locales":48,"../utils/hooks":23,"./check-overflow":128,"./from-string-and-array":129,"./from-string-and-format":130,"./from-string":131,"./from-array":132,"./from-object":133}],38:[function(require,module,exports) {
+},{"../utils/is-array":70,"../utils/is-object":117,"../utils/is-object-empty":118,"../utils/is-undefined":87,"../utils/is-number":94,"../utils/is-date":29,"../utils/map":119,"./valid":33,"../moment/constructor":48,"../locale/locales":39,"../utils/hooks":24,"./check-overflow":120,"./from-string-and-array":121,"./from-string-and-format":122,"./from-string":123,"./from-array":124,"./from-object":125}],31:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -26303,7 +26305,7 @@ var _fromAnything = require('./from-anything');
 function createLocal(input, format, locale, strict) {
     return (0, _fromAnything.createLocalOrUTC)(input, format, locale, strict, false);
 }
-},{"./from-anything":74}],42:[function(require,module,exports) {
+},{"./from-anything":65}],34:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -26377,7 +26379,7 @@ function max() {
 
     return pickBy('isAfter', args);
 }
-},{"../utils/deprecate":50,"../utils/is-array":80,"../create/local":38,"../create/valid":41}],43:[function(require,module,exports) {
+},{"../utils/deprecate":42,"../utils/is-array":70,"../create/local":31,"../create/valid":33}],35:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -26386,7 +26388,7 @@ Object.defineProperty(exports, "__esModule", {
 var now = exports.now = function () {
     return Date.now ? Date.now() : +new Date();
 };
-},{}],73:[function(require,module,exports) {
+},{}],64:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -26441,7 +26443,7 @@ function isValid() {
 function createInvalid() {
     return (0, _create.createDuration)(NaN);
 }
-},{"../utils/to-int":98,"../utils/index-of":122,"./constructor":54,"./create":53}],54:[function(require,module,exports) {
+},{"../utils/to-int":108,"../utils/index-of":113,"./constructor":46,"./create":45}],46:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -26496,7 +26498,7 @@ function Duration(duration) {
 function isDuration(obj) {
     return obj instanceof Duration;
 }
-},{"../units/aliases":70,"../locale/locales":48,"./valid.js":73}],118:[function(require,module,exports) {
+},{"../units/aliases":63,"../locale/locales":39,"./valid.js":64}],109:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -26510,7 +26512,7 @@ function absRound(number) {
         return Math.round(number);
     }
 }
-},{}],45:[function(require,module,exports) {
+},{}],37:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -26783,7 +26785,7 @@ function isUtcOffset() {
 function isUtc() {
     return this.isValid() ? this._isUTC && this._offset === 0 : false;
 }
-},{"../utils/zero-fill":94,"../duration/create":53,"../moment/add-subtract":81,"../moment/constructor":40,"../format/format":96,"../parse/regex":95,"../parse/token":97,"../create/local":38,"../create/from-anything":74,"../create/utc":39,"../utils/is-date":29,"../utils/to-int":98,"../utils/is-undefined":75,"../utils/compare-arrays":99,"../utils/hooks":23}],53:[function(require,module,exports) {
+},{"../utils/zero-fill":83,"../duration/create":45,"../moment/add-subtract":69,"../moment/constructor":48,"../format/format":84,"../parse/regex":85,"../parse/token":86,"../create/local":31,"../create/from-anything":65,"../create/utc":32,"../utils/is-date":29,"../utils/to-int":108,"../utils/is-undefined":87,"../utils/compare-arrays":88,"../utils/hooks":24}],45:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -26932,7 +26934,7 @@ function momentsDifference(base, other) {
 
     return res;
 }
-},{"./constructor":54,"../utils/is-number":110,"../utils/to-int":98,"../utils/abs-round":118,"../utils/has-own-prop":76,"../units/constants":119,"../units/offset":45,"../create/local":38,"./valid":73}],81:[function(require,module,exports) {
+},{"./constructor":46,"../utils/is-number":94,"../utils/to-int":108,"../utils/abs-round":109,"../utils/has-own-prop":89,"../units/constants":110,"../units/offset":37,"../create/local":31,"./valid":64}],69:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27002,7 +27004,7 @@ function addSubtract(mom, duration, isAdding, updateOffset) {
 
 var add = exports.add = createAdder(1, 'add');
 var subtract = exports.subtract = createAdder(-1, 'subtract');
-},{"./get-set":89,"../units/month":62,"../duration/create":53,"../utils/deprecate":50,"../utils/hooks":23,"../utils/abs-round":118}],25:[function(require,module,exports) {
+},{"./get-set":77,"../units/month":57,"../duration/create":45,"../utils/deprecate":42,"../utils/hooks":24,"../utils/abs-round":109}],26:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27039,7 +27041,7 @@ function calendar(time, formats) {
 
     return this.format(output || this.localeData().calendar(format, this, (0, _local.createLocal)(now)));
 }
-},{"../create/local":38,"../units/offset":45,"../utils/is-function":46,"../utils/hooks":23}],82:[function(require,module,exports) {
+},{"../create/local":31,"../units/offset":37,"../utils/is-function":38,"../utils/hooks":24}],71:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27052,7 +27054,7 @@ var _constructor = require('./constructor');
 function clone() {
     return new _constructor.Moment(this);
 }
-},{"./constructor":40}],84:[function(require,module,exports) {
+},{"./constructor":48}],72:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27130,7 +27132,7 @@ function isSameOrAfter(input, units) {
 function isSameOrBefore(input, units) {
     return this.isSame(input, units) || this.isBefore(input, units);
 }
-},{"./constructor":40,"../units/aliases":70,"../create/local":38,"../utils/is-undefined":75}],83:[function(require,module,exports) {
+},{"./constructor":48,"../units/aliases":63,"../create/local":31,"../utils/is-undefined":87}],73:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27211,7 +27213,7 @@ function monthDiff(a, b) {
     //check for negative zero, return zero if negative zero
     return -(wholeMonthDiff + adjust) || 0;
 }
-},{"../utils/abs-floor":134,"../units/offset":45,"../units/aliases":70}],85:[function(require,module,exports) {
+},{"../utils/abs-floor":126,"../units/offset":37,"../units/aliases":63}],74:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27290,7 +27292,7 @@ function format(inputString) {
     var output = (0, _format.formatMoment)(this, inputString);
     return this.localeData().postformat(output);
 }
-},{"../format/format":96,"../utils/hooks":23,"../utils/is-function":46}],86:[function(require,module,exports) {
+},{"../format/format":84,"../utils/hooks":24,"../utils/is-function":38}],75:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27316,7 +27318,7 @@ function from(time, withoutSuffix) {
 function fromNow(withoutSuffix) {
     return this.from((0, _local.createLocal)(), withoutSuffix);
 }
-},{"../duration/create":53,"../create/local":38,"../moment/constructor":40}],87:[function(require,module,exports) {
+},{"../duration/create":45,"../create/local":31,"../moment/constructor":48}],76:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27342,7 +27344,7 @@ function to(time, withoutSuffix) {
 function toNow(withoutSuffix) {
     return this.to((0, _local.createLocal)(), withoutSuffix);
 }
-},{"../duration/create":53,"../create/local":38,"../moment/constructor":40}],88:[function(require,module,exports) {
+},{"../duration/create":45,"../create/local":31,"../moment/constructor":48}],78:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27384,7 +27386,7 @@ var lang = exports.lang = (0, _deprecate.deprecate)('moment().lang() is deprecat
 function localeData() {
     return this._locale;
 }
-},{"../locale/locales":48,"../utils/deprecate":50}],90:[function(require,module,exports) {
+},{"../locale/locales":39,"../utils/deprecate":42}],79:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27452,7 +27454,7 @@ function endOf(units) {
 
     return this.startOf(units).add(1, units === 'isoWeek' ? 'week' : units).subtract(1, 'ms');
 }
-},{"../units/aliases":70}],91:[function(require,module,exports) {
+},{"../units/aliases":63}],80:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -27498,7 +27500,7 @@ function toJSON() {
     // new Date(NaN).toJSON() === null
     return this.isValid() ? this.toISOString() : null;
 }
-},{}],92:[function(require,module,exports) {
+},{}],81:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27531,7 +27533,7 @@ function parsingFlags() {
 function invalidAt() {
     return (0, _parsingFlags2.default)(this).overflow;
 }
-},{"../create/valid":41,"../utils/extend":77,"../create/parsing-flags":78}],93:[function(require,module,exports) {
+},{"../create/valid":33,"../utils/extend":66,"../create/parsing-flags":67}],82:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -27547,7 +27549,7 @@ function creationData() {
         strict: this._strict
     };
 }
-},{}],67:[function(require,module,exports) {
+},{}],60:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27671,7 +27673,7 @@ function setWeekAll(weekYear, week, weekday, dow, doy) {
     this.date(date.getUTCDate());
     return this;
 }
-},{"../format/format":96,"./aliases":70,"./priorities":120,"../parse/regex":95,"../parse/token":97,"./week-calendar-utils":124,"../utils/to-int":98,"../utils/hooks":23,"../create/local":38,"../create/date-from-array":121}],63:[function(require,module,exports) {
+},{"../format/format":84,"./aliases":63,"./priorities":111,"../parse/regex":85,"../parse/token":86,"./week-calendar-utils":115,"../utils/to-int":108,"../utils/hooks":24,"../create/local":31,"../create/date-from-array":112}],55:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27721,7 +27723,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 function getSetQuarter(input) {
     return input == null ? Math.ceil((this.month() + 1) / 3) : this.month((input - 1) * 3 + this.month() % 3);
 }
-},{"../format/format":96,"./aliases":70,"./priorities":120,"../parse/regex":95,"../parse/token":97,"./constants":119,"../utils/to-int":98}],56:[function(require,module,exports) {
+},{"../format/format":84,"./aliases":63,"./priorities":111,"../parse/regex":85,"../parse/token":86,"./constants":110,"../utils/to-int":108}],49:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27777,7 +27779,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // MOMENTS
 
 var getSetDayOfMonth = exports.getSetDayOfMonth = (0, _getSet.makeGetSet)('Date', true);
-},{"../moment/get-set":89,"../format/format":96,"./aliases":70,"./priorities":120,"../parse/regex":95,"../parse/token":97,"./constants":119,"../utils/to-int":98}],58:[function(require,module,exports) {
+},{"../moment/get-set":77,"../format/format":84,"./aliases":63,"./priorities":111,"../parse/regex":85,"../parse/token":86,"./constants":110,"../utils/to-int":108}],51:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27832,7 +27834,7 @@ function getSetDayOfYear(input) {
     var dayOfYear = Math.round((this.clone().startOf('day') - this.clone().startOf('year')) / 864e5) + 1;
     return input == null ? dayOfYear : this.add(input - dayOfYear, 'd');
 }
-},{"../format/format":96,"./aliases":70,"./priorities":120,"../parse/regex":95,"./year":69,"../create/date-from-array":121,"../parse/token":97,"../utils/to-int":98}],61:[function(require,module,exports) {
+},{"../format/format":84,"./aliases":63,"./priorities":111,"../parse/regex":85,"./year":62,"../create/date-from-array":112,"../parse/token":86,"../utils/to-int":108}],54:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27875,7 +27877,7 @@ var _constants = require('./constants');
 // MOMENTS
 
 var getSetMinute = exports.getSetMinute = (0, _getSet.makeGetSet)('Minutes', false);
-},{"../moment/get-set":89,"../format/format":96,"./aliases":70,"./priorities":120,"../parse/regex":95,"../parse/token":97,"./constants":119}],64:[function(require,module,exports) {
+},{"../moment/get-set":77,"../format/format":84,"./aliases":63,"./priorities":111,"../parse/regex":85,"../parse/token":86,"./constants":110}],56:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -27918,7 +27920,7 @@ var _constants = require('./constants');
 // MOMENTS
 
 var getSetSecond = exports.getSetSecond = (0, _getSet.makeGetSet)('Seconds', false);
-},{"../moment/get-set":89,"../format/format":96,"./aliases":70,"./priorities":120,"../parse/regex":95,"../parse/token":97,"./constants":119}],60:[function(require,module,exports) {
+},{"../moment/get-set":77,"../format/format":84,"./aliases":63,"./priorities":111,"../parse/regex":85,"../parse/token":86,"./constants":110}],53:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -28005,7 +28007,7 @@ for (token = 'S'; token.length <= 9; token += 'S') {
 // MOMENTS
 
 var getSetMillisecond = exports.getSetMillisecond = (0, _getSet.makeGetSet)('Milliseconds', false);
-},{"../moment/get-set":89,"../format/format":96,"./aliases":70,"./priorities":120,"../parse/regex":95,"../parse/token":97,"./constants":119,"../utils/to-int":98}],66:[function(require,module,exports) {
+},{"../moment/get-set":77,"../format/format":84,"./aliases":63,"./priorities":111,"../parse/regex":85,"../parse/token":86,"./constants":110,"../utils/to-int":108}],59:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -28030,7 +28032,7 @@ function getZoneAbbr() {
 function getZoneName() {
     return this._isUTC ? 'Coordinated Universal Time' : '';
 }
-},{"../format/format":96}],44:[function(require,module,exports) {
+},{"../format/format":84}],36:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -28217,7 +28219,7 @@ proto.zone = (0, _deprecate.deprecate)('moment().zone is deprecated, use moment(
 proto.isDSTShifted = (0, _deprecate.deprecate)('isDSTShifted is deprecated. See http://momentjs.com/guides/#/warnings/dst-shifted/ for more information', _offset.isDaylightSavingTimeShifted);
 
 exports.default = proto;
-},{"./constructor":40,"./add-subtract":81,"./calendar":25,"./clone":82,"./compare":84,"./diff":83,"./format":85,"./from":86,"./to":87,"./get-set":89,"./locale":88,"./min-max":42,"./start-end-of":90,"./to-type":91,"./valid":92,"./creation-data":93,"../units/year":69,"../units/week-year":67,"../units/quarter":63,"../units/month":62,"../units/week":68,"../units/day-of-month":56,"../units/day-of-week":57,"../units/day-of-year":58,"../units/hour":59,"../units/minute":61,"../units/second":64,"../units/millisecond":60,"../units/offset":45,"../units/timezone":66,"../utils/deprecate":50}],24:[function(require,module,exports) {
+},{"./constructor":48,"./add-subtract":69,"./calendar":26,"./clone":71,"./compare":72,"./diff":73,"./format":74,"./from":75,"./to":76,"./get-set":77,"./locale":78,"./min-max":34,"./start-end-of":79,"./to-type":80,"./valid":81,"./creation-data":82,"../units/year":62,"../units/week-year":60,"../units/quarter":55,"../units/month":57,"../units/week":61,"../units/day-of-month":49,"../units/day-of-week":50,"../units/day-of-year":51,"../units/hour":52,"../units/minute":54,"../units/second":56,"../units/millisecond":53,"../units/offset":37,"../units/timezone":59,"../utils/deprecate":42}],25:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -28261,7 +28263,7 @@ exports.createLocal = _local.createLocal;
 exports.createInZone = createInZone;
 exports.createInvalid = _valid.createInvalid;
 exports.momentPrototype = _prototype2.default;
-},{"../create/local":38,"../create/utc":39,"../create/valid":41,"./constructor":40,"./min-max":42,"./now":43,"./prototype":44}],105:[function(require,module,exports) {
+},{"../create/local":31,"../create/utc":32,"../create/valid":33,"./constructor":48,"./min-max":34,"./now":35,"./prototype":36}],99:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28271,7 +28273,7 @@ exports.preParsePostFormat = preParsePostFormat;
 function preParsePostFormat(string) {
     return string;
 }
-},{}],47:[function(require,module,exports) {
+},{}],40:[function(require,module,exports) {
 'use strict';
 
 var _constructor = require('./constructor');
@@ -28342,7 +28344,7 @@ proto.weekdaysMinRegex = _dayOfWeek.weekdaysMinRegex;
 
 proto.isPM = _hour.localeIsPM;
 proto.meridiem = _hour.localeMeridiem;
-},{"./constructor":100,"./calendar":101,"./formats":102,"./invalid":103,"./ordinal":104,"./pre-post-format":105,"./relative":106,"./set":107,"../units/month":62,"../units/week":68,"../units/day-of-week":57,"../units/hour":59}],49:[function(require,module,exports) {
+},{"./constructor":92,"./calendar":95,"./formats":96,"./invalid":97,"./ordinal":98,"./pre-post-format":99,"./relative":100,"./set":90,"../units/month":57,"../units/week":61,"../units/day-of-week":50,"../units/hour":52}],41:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -28453,7 +28455,7 @@ function listWeekdaysShort(localeSorted, format, index) {
 function listWeekdaysMin(localeSorted, format, index) {
     return listWeekdaysImpl(localeSorted, format, index, 'weekdaysMin');
 }
-},{"../utils/is-number":110,"./locales":48,"../create/utc":39}],51:[function(require,module,exports) {
+},{"../utils/is-number":94,"./locales":39,"../create/utc":32}],43:[function(require,module,exports) {
 'use strict';
 
 require('./prototype');
@@ -28474,7 +28476,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
         return number + output;
     }
 });
-},{"./prototype":47,"./locales":48,"../utils/to-int":98}],26:[function(require,module,exports) {
+},{"./prototype":40,"./locales":39,"../utils/to-int":108}],27:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -28507,7 +28509,7 @@ exports.listWeekdaysMin = _lists.listWeekdaysMin; // Side effect imports
 
 _hooks.hooks.lang = (0, _deprecate.deprecate)('moment.lang is deprecated. Use moment.locale instead.', _locales.getSetGlobalLocale);
 _hooks.hooks.langData = (0, _deprecate.deprecate)('moment.langData is deprecated. Use moment.localeData instead.', _locales.getLocale);
-},{"./prototype":47,"./locales":48,"./lists":49,"../utils/deprecate":50,"../utils/hooks":23,"./en":51}],111:[function(require,module,exports) {
+},{"./prototype":40,"./locales":39,"./lists":41,"../utils/deprecate":42,"../utils/hooks":24,"./en":43}],101:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28532,7 +28534,7 @@ function abs() {
 
     return this;
 }
-},{}],112:[function(require,module,exports) {
+},{}],102:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -28562,7 +28564,7 @@ function add(input, value) {
 function subtract(input, value) {
     return addSubtract(this, input, value, -1);
 }
-},{"./create":53}],135:[function(require,module,exports) {
+},{"./create":45}],127:[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -28576,7 +28578,7 @@ function absCeil(number) {
         return Math.ceil(number);
     }
 }
-},{}],114:[function(require,module,exports) {
+},{}],104:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -28654,7 +28656,7 @@ function monthsToDays(months) {
     // the reverse of daysToMonths
     return months * 146097 / 4800;
 }
-},{"../utils/abs-floor":134,"../utils/abs-ceil":135,"../create/date-from-array":121}],113:[function(require,module,exports) {
+},{"../utils/abs-floor":126,"../utils/abs-ceil":127,"../create/date-from-array":112}],103:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -28733,7 +28735,7 @@ var asDays = exports.asDays = makeAs('d');
 var asWeeks = exports.asWeeks = makeAs('w');
 var asMonths = exports.asMonths = makeAs('M');
 var asYears = exports.asYears = makeAs('y');
-},{"./bubble":114,"../units/aliases":70,"../utils/to-int":98}],115:[function(require,module,exports) {
+},{"./bubble":104,"../units/aliases":63,"../utils/to-int":108}],105:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -28746,7 +28748,7 @@ var _create = require('./create');
 function clone() {
     return (0, _create.createDuration)(this);
 }
-},{"./create":53}],116:[function(require,module,exports) {
+},{"./create":45}],106:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -28786,7 +28788,7 @@ var years = exports.years = makeGetter('years');
 function weeks() {
     return (0, _absFloor2.default)(this.days() / 7);
 }
-},{"../units/aliases":70,"../utils/abs-floor":134}],55:[function(require,module,exports) {
+},{"../units/aliases":63,"../utils/abs-floor":126}],47:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -28871,7 +28873,7 @@ function humanize(withSuffix) {
 
     return locale.postformat(output);
 }
-},{"./create":53}],117:[function(require,module,exports) {
+},{"./create":45}],107:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -28940,7 +28942,7 @@ function toISOString() {
 
     return totalSign + 'P' + (Y ? ymSign + Y + 'Y' : '') + (M ? ymSign + M + 'M' : '') + (D ? daysSign + D + 'D' : '') + (h || m || s ? 'T' : '') + (h ? hmsSign + h + 'H' : '') + (m ? hmsSign + m + 'M' : '') + (s ? hmsSign + s + 'S' : '');
 }
-},{"../utils/abs-floor":134}],52:[function(require,module,exports) {
+},{"../utils/abs-floor":126}],44:[function(require,module,exports) {
 'use strict';
 
 var _constructor = require('./constructor');
@@ -29006,7 +29008,7 @@ proto.localeData = _locale.localeData;
 
 proto.toIsoString = (0, _deprecate.deprecate)('toIsoString() is deprecated. Please use toISOString() instead (notice the capitals)', _isoString.toISOString);
 proto.lang = _locale.lang;
-},{"./constructor":54,"./abs":111,"./add-subtract":112,"./as":113,"./bubble":114,"./clone":115,"./get":116,"./humanize":55,"./iso-string":117,"../moment/locale":88,"./valid":73,"../utils/deprecate":50}],27:[function(require,module,exports) {
+},{"./constructor":46,"./abs":101,"./add-subtract":102,"./as":103,"./bubble":104,"./clone":105,"./get":106,"./humanize":47,"./iso-string":107,"../moment/locale":78,"./valid":64,"../utils/deprecate":42}],28:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -29027,7 +29029,7 @@ exports.createDuration = _create.createDuration;
 exports.isDuration = _constructor.isDuration;
 exports.getSetRelativeTimeRounding = _humanize.getSetRelativeTimeRounding;
 exports.getSetRelativeTimeThreshold = _humanize.getSetRelativeTimeThreshold;
-},{"./prototype":52,"./create":53,"./constructor":54,"./humanize":55}],65:[function(require,module,exports) {
+},{"./prototype":44,"./create":45,"./constructor":46,"./humanize":47}],58:[function(require,module,exports) {
 'use strict';
 
 var _format = require('../format/format');
@@ -29057,7 +29059,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 (0, _token.addParseToken)('x', function (input, array, config) {
     config._d = new Date((0, _toInt2.default)(input));
 });
-},{"../format/format":96,"../parse/regex":95,"../parse/token":97,"../utils/to-int":98}],28:[function(require,module,exports) {
+},{"../format/format":84,"../parse/regex":85,"../parse/token":86,"../utils/to-int":108}],30:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -29099,7 +29101,7 @@ var _aliases = require('./aliases');
 
 // Side effect imports
 exports.normalizeUnits = _aliases.normalizeUnits;
-},{"./day-of-month":56,"./day-of-week":57,"./day-of-year":58,"./hour":59,"./millisecond":60,"./minute":61,"./month":62,"./offset":45,"./quarter":63,"./second":64,"./timestamp":65,"./timezone":66,"./week-year":67,"./week":68,"./year":69,"./aliases":70}],22:[function(require,module,exports) {
+},{"./day-of-month":49,"./day-of-week":50,"./day-of-year":51,"./hour":52,"./millisecond":53,"./minute":54,"./month":57,"./offset":37,"./quarter":55,"./second":56,"./timestamp":58,"./timezone":59,"./week-year":60,"./week":61,"./year":62,"./aliases":63}],23:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -29174,34 +29176,80 @@ _hooks.hooks.HTML5_FMT = {
 };
 
 exports.default = _hooks.hooks;
-},{"./lib/utils/hooks":23,"./lib/moment/moment":24,"./lib/moment/calendar":25,"./lib/locale/locale":26,"./lib/duration/duration":27,"./lib/units/units":28,"./lib/utils/is-date":29}],13:[function(require,module,exports) {
+},{"./lib/utils/hooks":24,"./lib/moment/moment":25,"./lib/moment/calendar":26,"./lib/locale/locale":27,"./lib/duration/duration":28,"./lib/units/units":30,"./lib/utils/is-date":29}],7:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n    width: 100%;\n    height: 100%;\n    background-color: transparent;\n    border: none;\n    font-size: 24px;\n    line-height: ', 'px;\n    outline: none;\n'], ['\n    width: 100%;\n    height: 100%;\n    background-color: transparent;\n    border: none;\n    font-size: 24px;\n    line-height: ', 'px;\n    outline: none;\n']);
+var _templateObject = _taggedTemplateLiteral(['\n    width: 100%;\n    height: 100%;\n    background-color: transparent;\n    border: none;\n    font-size: 24px;\n    line-height: ', 'px;\n    outline: none;\n    resize: none;\n\n    ::-webkit-scrollbar {\n        width: 6px;\n    }\n\n    ::-webkit-scrollbar-track {\n        background-color: transparent;\n    }\n\n    ::-webkit-scrollbar-thumb {\n        background-color: ', ';\n        border-radius: 6px;\n    }\n'], ['\n    width: 100%;\n    height: 100%;\n    background-color: transparent;\n    border: none;\n    font-size: 24px;\n    line-height: ', 'px;\n    outline: none;\n    resize: none;\n\n    ::-webkit-scrollbar {\n        width: 6px;\n    }\n\n    ::-webkit-scrollbar-track {\n        background-color: transparent;\n    }\n\n    ::-webkit-scrollbar-thumb {\n        background-color: ', ';\n        border-radius: 6px;\n    }\n']);
 
 var _styledComponents = require('styled-components');
 
 var _styledComponents2 = _interopRequireDefault(_styledComponents);
 
+var _styles = require('../styles');
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-exports.default = _styledComponents2.default.textarea(_templateObject, 1.37 * 24);
-},{"styled-components":21}],14:[function(require,module,exports) {
+exports.default = _styledComponents2.default.textarea(_templateObject, 1.37 * 24, _styles.colors.green);
+},{"styled-components":22,"../styles":15}],13:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
 
-var _templateObject = _taggedTemplateLiteral(['\n    width: 100%;\n    height: 100%;\n    padding: 15px;\n    background-color: ', ';\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n'], ['\n    width: 100%;\n    height: 100%;\n    padding: 15px;\n    background-color: ', ';\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n']);
+var _templateObject = _taggedTemplateLiteral(['\n    width: 100%;\n    height: 5px;\n    display: flex;\n    align-items: flex-start;\n'], ['\n    width: 100%;\n    height: 5px;\n    display: flex;\n    align-items: flex-start;\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n    height: 100%;\n    background-color: ', ';\n    width: ', '%;\n    transition: 0.5s ease width;\n'], ['\n    height: 100%;\n    background-color: ', ';\n    width: ', '%;\n    transition: 0.5s ease width;\n']);
 
-exports.default = WritingInfoPanel;
+exports.default = TimeLeftBar;
+
+var _react = require('react');
+
+var React = _interopRequireWildcard(_react);
+
+var _styledComponents = require('styled-components');
+
+var _styledComponents2 = _interopRequireDefault(_styledComponents);
+
+var _styles = require('../styles');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var ProgressBar = _styledComponents2.default.div(_templateObject);
+
+var RemainingBar = _styledComponents2.default.div(_templateObject2, _styles.colors.green, function (props) {
+    return 100 * props.remainingPercentage;
+});
+
+function TimeLeftBar(props) {
+    return React.createElement(
+        ProgressBar,
+        null,
+        React.createElement(RemainingBar, { remainingPercentage: props.timeLeft / props.totalTime })
+    );
+}
+},{"react":16,"styled-components":22,"../styles":15}],8:[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _templateObject = _taggedTemplateLiteral(['\n    position: fixed;\n    top: 0;\n    left: 0;\n    opacity: ', ';\n    height: ', ';\n    transition: 0.5s ease all;\n'], ['\n    position: fixed;\n    top: 0;\n    left: 0;\n    opacity: ', ';\n    height: ', ';\n    transition: 0.5s ease all;\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100vw;\n'], ['\n    position: absolute;\n    top: 0;\n    left: 0;\n    width: 100vw;\n']),
+    _templateObject3 = _taggedTemplateLiteral(['\n    position: absolute;\n    top: ', 'px;\n    width: 100vw;\n    height: ', 'px;\n    transition: 0.5s ease top;\n\n    background-color: ', ';\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n'], ['\n    position: absolute;\n    top: ', 'px;\n    width: 100vw;\n    height: ', 'px;\n    transition: 0.5s ease top;\n\n    background-color: ', ';\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n']),
+    _templateObject4 = _taggedTemplateLiteral(['\n    display: flex;\n    align-items: center;\n    & > * {\n        margin: 0px 5px;\n    }\n'], ['\n    display: flex;\n    align-items: center;\n    & > * {\n        margin: 0px 5px;\n    }\n']);
+
+exports.default = WritingHUD;
 
 var _react = require('react');
 
@@ -29219,6 +29267,10 @@ var _Button = require('./Button');
 
 var _Button2 = _interopRequireDefault(_Button);
 
+var _TimeLeftBar = require('./TimeLeftBar');
+
+var _TimeLeftBar2 = _interopRequireDefault(_TimeLeftBar);
+
 var _styles = require('../styles');
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -29227,53 +29279,63 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-var WrapperDiv = _styledComponents2.default.div(_templateObject, _styles.colors.green);
+var WrapperDiv = _styledComponents2.default.div(_templateObject, function (props) {
+    return props.show ? 1.0 : 0.0;
+}, function (props) {
+    return props.useFullScreen ? '100%' : '100px';
+});
 
-var formatTime = function formatTime(ms) {
-    var minutes = Math.floor(ms / (60 * 1000));
-    ms %= 60 * 1000;
-    var seconds = Math.floor(ms / 1000);
-    ms %= 1000;
-    return { minutes: minutes, seconds: seconds };
-};
+var TimeLeftBarWrapper = _styledComponents2.default.div(_templateObject2);
 
-function WritingInfoPanel(props) {
+var COMPLETION_BANNER_HEIGHT = 100;
+var CompletionBanner = _styledComponents2.default.div(_templateObject3, function (props) {
+    return props.show ? 0 : -COMPLETION_BANNER_HEIGHT;
+}, COMPLETION_BANNER_HEIGHT, _styles.colors.green);
 
-    var getTimerText = function getTimerText() {
-        if (props.timeLeft > 0) {
-            var t = formatTime(props.timeLeft);
+var BannerButtons = _styledComponents2.default.div(_templateObject4);
 
-            if (t.minutes === 0) {
-                if (t.seconds <= 10) {
-                    return 'Just a few seconds left.';
-                }
-                return 'Less than one minute remaining.';
-            } else if (t.minutes === 1) {
-                return '1 minute remaining.';
-            } else {
-                return t.minutes + ' minutes remaining.';
-            }
-        } else {
-            return 'Done for today. Good work!';
-        }
-    };
+function WritingHUD(props) {
+    var showHUD = props.showHUD,
+        totalTime = props.totalTime,
+        timeLeft = props.timeLeft,
+        onDoneClick = props.onDoneClick,
+        onWriteMoreClick = props.onWriteMoreClick;
+
 
     return React.createElement(
         WrapperDiv,
-        null,
+        { show: showHUD },
         React.createElement(
-            _Text2.default,
-            { bold: true },
-            getTimerText()
+            TimeLeftBarWrapper,
+            null,
+            React.createElement(_TimeLeftBar2.default, { totalTime: totalTime, timeLeft: timeLeft })
         ),
-        props.timeLeft === 0 && props.writeState !== 'done' && React.createElement(
-            _Button2.default,
-            { fontSize: 18, onClick: props.onDoneClick },
-            'Release into digital void'
+        React.createElement(
+            CompletionBanner,
+            { show: timeLeft === 0 },
+            React.createElement(
+                _Text2.default,
+                { bold: true },
+                'Time\'s up. Ready to release your words into the digital void?'
+            ),
+            React.createElement(
+                BannerButtons,
+                null,
+                React.createElement(
+                    _Button2.default,
+                    { onClick: onDoneClick },
+                    'Yes'
+                ),
+                React.createElement(
+                    _Button2.default,
+                    { onClick: onWriteMoreClick },
+                    'Not yet'
+                )
+            )
         )
     );
 }
-},{"react":16,"styled-components":21,"./Text":9,"./Button":7,"../styles":12}],5:[function(require,module,exports) {
+},{"react":16,"styled-components":22,"./Text":10,"./Button":11,"./TimeLeftBar":13,"../styles":15}],5:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -29282,9 +29344,9 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _templateObject = _taggedTemplateLiteral(['\n    width: 100%;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    background-color: ', ';\n'], ['\n    width: 100%;\n    height: 100%;\n    display: flex;\n    flex-direction: column;\n    align-items: center;\n    background-color: ', ';\n']),
-    _templateObject2 = _taggedTemplateLiteral(['\n    width: 100%;\n    height: 100%;\n    max-width: 800px;\n\n    @media screen and (max-width: 767px) {\n        padding: 10px 10px;   \n    }\n\n    @media screen and (min-width: 768px) {\n        padding: 50px 0;\n    }\n'], ['\n    width: 100%;\n    height: 100%;\n    max-width: 800px;\n\n    @media screen and (max-width: 767px) {\n        padding: 10px 10px;   \n    }\n\n    @media screen and (min-width: 768px) {\n        padding: 50px 0;\n    }\n']),
-    _templateObject3 = _taggedTemplateLiteral(['\n    position: fixed;\n    width: 100vw;\n    left: 0;\n    bottom: ', 'px;\n    height: ', ';\n    transition: 0.5s ease all;\n'], ['\n    position: fixed;\n    width: 100vw;\n    left: 0;\n    bottom: ', 'px;\n    height: ', ';\n    transition: 0.5s ease all;\n']);
+var _templateObject = _taggedTemplateLiteral(['\n    width: 100%;\n    height: 100%;\n    background-color: ', ';\n'], ['\n    width: 100%;\n    height: 100%;\n    background-color: ', ';\n']),
+    _templateObject2 = _taggedTemplateLiteral(['\n    width: 100%;\n    height: 100%;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-grow: 1;\n    flex-basis: 0;\n\n    & > * { max-width: 800px; }\n\n    @media screen and (max-width: 767px) {\n        padding: 10px 10px;   \n    }\n\n    @media screen and (min-width: 768px) {\n        padding: 50px 0;\n    }\n'], ['\n    width: 100%;\n    height: 100%;\n    display: flex;\n    justify-content: center;\n    align-items: center;\n    flex-grow: 1;\n    flex-basis: 0;\n\n    & > * { max-width: 800px; }\n\n    @media screen and (max-width: 767px) {\n        padding: 10px 10px;   \n    }\n\n    @media screen and (min-width: 768px) {\n        padding: 50px 0;\n    }\n']),
+    _templateObject3 = _taggedTemplateLiteral(['\n    position: fixed;\n    top: 10px;\n    right: 10px;\n    color: ', ';\n    display: ', ';\n    cursor: pointer;\n'], ['\n    position: fixed;\n    top: 10px;\n    right: 10px;\n    color: ', ';\n    display: ', ';\n    cursor: pointer;\n']);
 
 var _react = require('react');
 
@@ -29302,9 +29364,9 @@ var _TypePanel = require('./TypePanel');
 
 var _TypePanel2 = _interopRequireDefault(_TypePanel);
 
-var _WritingInfoPanel = require('./WritingInfoPanel');
+var _WritingHUD = require('./WritingHUD');
 
-var _WritingInfoPanel2 = _interopRequireDefault(_WritingInfoPanel);
+var _WritingHUD2 = _interopRequireDefault(_WritingHUD);
 
 var _styles = require('../styles');
 
@@ -29324,35 +29386,81 @@ var WritingViewWrapper = _styledComponents2.default.div(_templateObject, _styles
 
 var TypePanelWrapper = _styledComponents2.default.div(_templateObject2);
 
-var NotificationBarDiv = _styledComponents2.default.div(_templateObject3, function (props) {
-    return props.show ? 0 : -100;
-}, function (props) {
-    return props.useFullScreen ? '100%' : '100px';
+var HUDToggle = _styledComponents2.default.div(_templateObject3, _styles.colors.green, function (props) {
+    return props.show ? 'block' : 'none';
 });
 
 var WritingView = function (_React$Component) {
     _inherits(WritingView, _React$Component);
-
-    // typePanel: ?HTMLTextAreaElement
-    // timerInterval: ?(() => void)
 
     function WritingView(props) {
         _classCallCheck(this, WritingView);
 
         var _this = _possibleConstructorReturn(this, (WritingView.__proto__ || Object.getPrototypeOf(WritingView)).call(this, props));
 
-        _this.state = {
-            totalWriteTime: props.totalWriteTime,
-            startTime: Date.now(),
-            remainingTime: props.totalWriteTime,
-            showInfoBar: true,
-            state: 'writing'
+        _this.handleKeyDown = function () {
+            if (_this.state.actionBasedHUD) {
+                _this.setState({ showHUD: false });
+            }
+
+            if (_this.state.writingState === 'done') {
+                _this.setState({ showHUDToggle: false });
+            }
         };
 
-        _this.updateRemainingTime = _this.updateRemainingTime.bind(_this);
-        _this.handleKeyDown = _this.handleKeyDown.bind(_this);
-        _this.handleMouseMove = _this.handleMouseMove.bind(_this);
-        _this.handleDoneClick = _this.handleDoneClick.bind(_this);
+        _this.handleMouseMove = function () {
+            if (_this.state.actionBasedHUD) {
+                _this.setState({ showHUD: true });
+            }
+
+            if (_this.state.writingState === 'done') {
+                _this.setState({ showHUDToggle: true });
+            }
+        };
+
+        _this.handleDoneClick = function () {
+            _this.setState({
+                showHUD: false
+            });
+            _this.animateErasure();
+        };
+
+        _this.handleWriteMoreClick = function () {
+            _this.setState({
+                showHUD: false,
+                showHUDToggle: true
+            });
+        };
+
+        _this.toggleHUD = function () {
+            _this.setState({ showHUD: !_this.state.showHUD });
+        };
+
+        _this.updateRemainingTime = function () {
+            if (_this.state.remainingTime <= 0) {
+                _this.endWriting();
+            } else {
+                var _remainingTime = _this.state.totalWriteTime - (Date.now() - _this.state.startTime);
+
+                var nextState = { remainingTime: _remainingTime };
+                if (_remainingTime === 0) {
+                    nextState.process = 'done';
+                    _this.animateEnd();
+                }
+
+                _this.setState(nextState);
+            }
+        };
+
+        _this.state = {
+            totalWriteTime: 2000,
+            startTime: Date.now(),
+            remainingTime: 2000,
+            showHUD: true,
+            showHUDToggle: false,
+            actionBasedHUD: true,
+            writingState: 'writing'
+        };
         return _this;
     }
 
@@ -29370,54 +29478,42 @@ var WritingView = function (_React$Component) {
             }
         }
     }, {
-        key: 'handleKeyDown',
-        value: function handleKeyDown() {
-            this.setState({ showInfoBar: false });
-        }
-    }, {
-        key: 'handleMouseMove',
-        value: function handleMouseMove() {
-            this.setState({ showInfoBar: true });
-        }
-    }, {
-        key: 'handleDoneClick',
-        value: function handleDoneClick() {
+        key: 'animateErasure',
+        value: function animateErasure() {
             var _this2 = this;
 
-            var backspaceTillEmpty = function backspaceTillEmpty() {
-                var currValue = _this2.typePanel.value;
-                if (currValue.length === 0) {
+            if (!this.typePanel) return;
+            var numCharacters = this.typePanel.value.length;
+
+            var TOTAL_TIME = 5000; // ms
+            var frequency = Math.min(TOTAL_TIME / numCharacters, 100);
+
+            var backspaceTillEmpty = setInterval(function () {
+                if (_this2.typePanel) {
+                    var currValue = _this2.typePanel.value;
+                    if (currValue.length === 0) {
+                        clearInterval(backspaceTillEmpty);
+                        _this2.props.onCompletion();
+                    } else {
+                        _this2.typePanel.value = currValue.slice(0, -1);
+                    }
+                } else {
                     clearInterval(backspaceTillEmpty);
-                    _this2.setState({
-                        state: 'done'
-                    });
                 }
-                _this2.typePanel.value = currValue.slice(0, -1);
-            };
-            setInterval(backspaceTillEmpty, 10);
+            }, frequency);
         }
     }, {
-        key: 'updateRemainingTime',
-        value: function updateRemainingTime() {
-            if (this.state.remainingTime <= 0) {
-                var nextState = { remainingTime: 0 };
-                if (this.typePanel && this.typePanel.value.length === 0) {
-                    nextState.state = 'done';
-                }
-                this.setState(nextState);
-                if (this.timerInterval) {
-                    clearInterval(this.timerInterval);
-                }
-            } else {
-                var _remainingTime = this.state.totalWriteTime - (Date.now() - this.state.startTime);
+        key: 'endWriting',
+        value: function endWriting() {
+            this.setState({
+                remainingTime: 0,
+                actionBasedHUD: false,
+                showHUD: true,
+                state: this.typePanel && this.typePanel.value.length === 0 ? 'done' : 'done'
+            });
 
-                var _nextState = { remainingTime: _remainingTime };
-                if (_remainingTime === 0) {
-                    _nextState.process = 'time-end';
-                    this.animateEnd();
-                }
-
-                this.setState(_nextState);
+            if (this.timerInterval) {
+                clearInterval(this.timerInterval);
             }
         }
     }, {
@@ -29427,7 +29523,7 @@ var WritingView = function (_React$Component) {
 
             return React.createElement(
                 WritingViewWrapper,
-                null,
+                { showHUD: this.state.showHUD || this.state.remainingTime === 0 },
                 React.createElement(
                     TypePanelWrapper,
                     null,
@@ -29440,17 +29536,17 @@ var WritingView = function (_React$Component) {
                         onKeyDown: this.handleKeyDown
                     })
                 ),
+                React.createElement(_WritingHUD2.default, {
+                    onDoneClick: this.handleDoneClick,
+                    onWriteMoreClick: this.handleWriteMoreClick,
+                    totalTime: this.state.totalWriteTime,
+                    timeLeft: this.state.remainingTime,
+                    showHUD: this.state.showHUD
+                }),
                 React.createElement(
-                    NotificationBarDiv,
-                    {
-                        show: this.state.showInfoBar || this.state.remainingTime === 0,
-                        useFullScreen: this.state.state === 'done'
-                    },
-                    React.createElement(_WritingInfoPanel2.default, {
-                        onDoneClick: this.handleDoneClick,
-                        timeLeft: this.state.remainingTime,
-                        writeState: this.state.state
-                    })
+                    HUDToggle,
+                    { show: this.state.showHUDToggle && !this.state.showHUD, onClick: this.toggleHUD },
+                    'I\'m done now'
                 )
             );
         }
@@ -29460,7 +29556,58 @@ var WritingView = function (_React$Component) {
 }(React.Component);
 
 exports.default = WritingView;
-},{"react":16,"styled-components":21,"moment":22,"./TypePanel":13,"./WritingInfoPanel":14,"../styles":12}],3:[function(require,module,exports) {
+},{"react":16,"styled-components":22,"moment":23,"./TypePanel":7,"./WritingHUD":8,"../styles":15}],6:[function(require,module,exports) {
+'use strict';
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _templateObject = _taggedTemplateLiteral(['\n    width: 100%;\n    height: 100%;\n    background-color: ', ';\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n'], ['\n    width: 100%;\n    height: 100%;\n    background-color: ', ';\n    display: flex;\n    flex-direction: column;\n    justify-content: center;\n    align-items: center;\n']);
+
+exports.default = function () {
+    return React.createElement(
+        Wrapper,
+        null,
+        React.createElement(
+            _Title2.default,
+            null,
+            'Great writing session today.'
+        ),
+        React.createElement(
+            _Text2.default,
+            { bold: true, center: true },
+            'I hope you were able to get some things off your mind.'
+        )
+    );
+};
+
+var _react = require('react');
+
+var React = _interopRequireWildcard(_react);
+
+var _styledComponents = require('styled-components');
+
+var _styledComponents2 = _interopRequireDefault(_styledComponents);
+
+var _Title = require('./Title');
+
+var _Title2 = _interopRequireDefault(_Title);
+
+var _Text = require('./Text');
+
+var _Text2 = _interopRequireDefault(_Text);
+
+var _styles = require('../styles');
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
+
+var Wrapper = _styledComponents2.default.div(_templateObject, _styles.colors.green);
+},{"react":16,"styled-components":22,"./Title":9,"./Text":10,"../styles":15}],3:[function(require,module,exports) {
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -29487,6 +29634,10 @@ var _WritingView = require('./components/WritingView');
 
 var _WritingView2 = _interopRequireDefault(_WritingView);
 
+var _CompletionView = require('./components/CompletionView');
+
+var _CompletionView2 = _interopRequireDefault(_CompletionView);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
@@ -29499,7 +29650,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _taggedTemplateLiteral(strings, raw) { return Object.freeze(Object.defineProperties(strings, { raw: { value: Object.freeze(raw) } })); }
 
-(0, _styledComponents.injectGlobal)(['\n  body {\n    font-family: \'Montserrat\', sans-serif;\n    margin: 0;\n    width: 100%;\n    height: 100%;\n  }\n\n  body.disable-scroll {\n    overflow: hidden;\n  }\n\n  *, *:before, *:after {\n    box-sizing: border-box;\n  }\n']);
+(0, _styledComponents.injectGlobal)(['\n  body {\n    font-family: \'Montserrat\', sans-serif;\n    margin: 0;\n    width: 100%;\n    height: 100%;\n    overflow: hidden;\n  }\n\n  body.disable-scroll {\n    overflow: hidden;\n  }\n\n  *, *:before, *:after {\n    box-sizing: border-box;\n  }\n']);
 
 var AppWrapper = _styledComponents2.default.div(_templateObject);
 
@@ -29516,6 +29667,7 @@ var App = function (_React$Component) {
             totalWriteTime: null
         };
         _this.handleStartRequest = _this.handleStartRequest.bind(_this);
+        _this.handleCompletion = _this.handleCompletion.bind(_this);
         return _this;
     }
 
@@ -29528,6 +29680,13 @@ var App = function (_React$Component) {
             });
         }
     }, {
+        key: 'handleCompletion',
+        value: function handleCompletion() {
+            this.setState({
+                currentView: 'completion'
+            });
+        }
+    }, {
         key: 'render',
         value: function render() {
             var _this2 = this;
@@ -29537,7 +29696,10 @@ var App = function (_React$Component) {
                     return React.createElement(_LandingView2.default, { onStartRequest: _this2.handleStartRequest });
                 },
                 writing: function writing() {
-                    return React.createElement(_WritingView2.default, { totalWriteTime: _this2.state.totalWriteTime });
+                    return React.createElement(_WritingView2.default, { totalWriteTime: _this2.state.totalWriteTime, onCompletion: _this2.handleCompletion });
+                },
+                completion: function completion() {
+                    return React.createElement(_CompletionView2.default, null);
                 }
             }[this.state.currentView];
 
@@ -29553,7 +29715,7 @@ var App = function (_React$Component) {
 }(React.Component);
 
 exports.default = App;
-},{"react":16,"styled-components":21,"./components/LandingView":4,"./components/WritingView":5}],2:[function(require,module,exports) {
+},{"react":16,"styled-components":22,"./components/LandingView":4,"./components/WritingView":5,"./components/CompletionView":6}],2:[function(require,module,exports) {
 "use strict";
 
 var _react = require("react");
@@ -29573,7 +29735,7 @@ var wrapper = document.getElementById("app");
 if (wrapper) {
     (0, _reactDom.render)(_react2.default.createElement(_App2.default, null), wrapper);
 }
-},{"react":16,"react-dom":15,"./App":3}],154:[function(require,module,exports) {
+},{"react":16,"react-dom":17,"./App":3}],155:[function(require,module,exports) {
 
 var global = (1, eval)('this');
 var OldModule = module.bundle.Module;
@@ -29595,7 +29757,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '63040' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '57363' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
@@ -29696,5 +29858,5 @@ function hmrAccept(bundle, id) {
     return hmrAccept(global.require, id);
   });
 }
-},{}]},{},[154,2])
+},{}]},{},[155,2])
 //# sourceMappingURL=/dist/287f1f134213ad70013f53d37fdb683c.map

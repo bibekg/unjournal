@@ -11,6 +11,7 @@ export default styled.p`
     ${props => props.center && 'text-align: center;'}
     text-decoration: ${props => props.underline ? 'underline' : 'none'};
     cursor: ${props => props.pointer ? 'pointer' : 'default'};
+    text-align: ${props => props.center ? 'center' : 'left'};
     letter-spacing: 0.8px;
     margin: 5px 0;
 `
