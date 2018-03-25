@@ -90,7 +90,7 @@ export default class LandingView extends React.Component<PropsType, StateType> {
                             value={this.state.writeTime}
                             onChange={this.handleTimeChange}
                         />
-                        <Title>{copy.timeSelector.post}</Title>
+                        <Title>{copy.timeSelector.post[this.state.writeTime === 1 ? 'singular' : 'plural']}</Title>
                     </TimeSpecifier>
                     <Button onClick={this.handleStart}>
                         Write
