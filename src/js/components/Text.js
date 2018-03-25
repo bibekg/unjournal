@@ -10,7 +10,7 @@ export default styled.p`
     color: ${props => props.color ? props.color : colors.white};
     ${props => props.center && 'text-align: center;'}
     text-decoration: ${props => props.underline ? 'underline' : 'none'};
-    cursor: ${props => props.pointer ? 'pointer' : 'default'};
+    cursor: ${props => props.pointer ? 'pointer' : 'inherit'};
     text-align: ${props => props.center ? 'center' : 'left'};
     letter-spacing: 0.8px;
     margin: 5px 0;

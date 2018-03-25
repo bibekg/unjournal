@@ -1,6 +1,7 @@
 // @flow
 
 import * as React from 'react'
+import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
 import { colors } from '../styles'
 import copy from '../copy'
@@ -8,6 +9,7 @@ import Button from './Button'
 import Title from './Title'
 import Text from './Text'
 import WriteTimeInput from './WriteTimeInput'
+import Navbar from './Navbar'
 
 const LandingViewWrapper = styled.div`
     background-color: ${colors.green};
@@ -82,6 +84,7 @@ export default class LandingView extends React.Component<PropsType, StateType> {
     render(): React.Element<*> {
         return (
             <LandingViewWrapper>
+                <Navbar theme='dark' />
                 <Centerizer>
                     <TimeSpecifier>
                         <Title>{copy.timeSelector.pre}</Title>
@@ -95,7 +98,6 @@ export default class LandingView extends React.Component<PropsType, StateType> {
                     <Button onClick={this.handleStart}>
                         Write
                     </Button>
-
                 </Centerizer>
             </LandingViewWrapper>
         )

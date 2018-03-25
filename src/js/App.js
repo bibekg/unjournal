@@ -1,10 +1,12 @@
 // @flow
 
 import * as React from 'react'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import styled, { injectGlobal } from 'styled-components'
 import LandingView from './components/LandingView'
 import WritingView from './components/WritingView'
 import CompletionView from './components/CompletionView'
+import AboutPage from './components/AboutPage'
 
 injectGlobal([`
   body {
@@ -69,7 +71,12 @@ class App extends React.Component<PropsType, StateType> {
 
         return (
             <AppWrapper>
-                {renderer()}
+                <BrowserRouter>
+                    <Switch>
+                        <Route path='/about' render={() => <AboutPage />} />
+                        <Route exact path='/' render={renderer} />
+                    </Switch>
+                </BrowserRouter>
             </AppWrapper>
         )
     }
