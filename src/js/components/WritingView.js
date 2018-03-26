@@ -87,9 +87,9 @@ export default class WritingView extends React.Component<PropsType> {
         super(props)
 
         this.state = {
-            totalWriteTime: props.totalWriteTime,
+            totalWriteTime: 1000,
             startTime: Date.now(),
-            remainingTime: props.totalWriteTime,
+            remainingTime: 1000,
             showHUD: true,
             showHUDToggle: false,
             actionBasedHUD: true,
@@ -151,17 +151,19 @@ export default class WritingView extends React.Component<PropsType> {
     }
 
     handleDoneClick = () => {
-        this.setState({
-            showHUD: false
-        })
-        this.animateErasure()
+        if (this.state.remainingTime === 0) {
+            this.setState({ showHUD: false })
+            this.animateErasure()
+        }
     }
 
     handleWriteMoreClick = () => {
-        this.setState({ 
-            showHUD: false,
-            showHUDToggle: true,
-        })
+        if (this.state.remainingTime === 0) {
+            this.setState({ 
+                showHUD: false,
+                showHUDToggle: true,
+            })
+        }
     }
 
     toggleHUD = () => {

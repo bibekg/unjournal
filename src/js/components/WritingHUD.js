@@ -71,13 +71,20 @@ export default function WritingHUD(props: PropsType) {
             <TimeLeftBar>
                 <RemainingTimeBar remainingPercentage={timeLeft / totalTime} />
             </TimeLeftBar>
-            <CompletionBanner show={timeLeft === 0}>
-                <Text bold>Time's up. Ready to release your words into the digital void?</Text>
-                <BannerButtons>
-                    <Button onClick={onDoneClick}>Yes</Button>
-                    <Button onClick={onWriteMoreClick}>Not yet</Button>
-                </BannerButtons>
-            </CompletionBanner>
+            {/* 
+                Only render the completion banner near the end so that the buttons don't render in the DOM
+                This prevents the user from accidentally pressing tab and selecting the button
+                Need to render a little before 0 so that it animates open though
+             */}
+            { timeLeft < 500 && (
+                <CompletionBanner show={timeLeft === 0}>
+                    <Text bold>Time's up. Ready to release your words into the digital void?</Text>
+                    <BannerButtons>
+                        <Button onClick={onDoneClick}>Yes</Button>
+                        <Button onClick={onWriteMoreClick}>Not yet</Button>
+                    </BannerButtons>
+                </CompletionBanner>
+            )}
         </WrapperDiv>
 
     )   
