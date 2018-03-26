@@ -8,8 +8,8 @@
     "dev": "parcel ./src/index.html",
     "build": "parcel build src/index.html -d build/ --public-url ./",
     "deploy": "yarn build && yarn deploy-surge",
-    "deploy-surge": "surge --project build --domain unjournal.surge.sh",
-    "clean": "rm -rf dist && rm -rf build"
+    "deploy-surge": "surge --project build --domain https://unjournal.surge.sh",
+    "clean": "rimraf dist && rimraf build"
   },
   "dependencies": {
     "eslint-plugin-flowtype": "^2.46.1",
@@ -26,6 +26,7 @@
     "babel-preset-react": "^6.24.1",
     "flow": "^0.2.3",
     "parcel-bundler": "^1.6.2",
+    "rimraf": "^2.6.2",
     "surge": "^0.20.1"
   }
 }
