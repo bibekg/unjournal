@@ -1,17 +1,19 @@
 // @flow
 
 import styled from 'styled-components'
-import { colors } from '../styles'
+import { colors, fonts } from '../styles'
 
 export default styled.textarea.attrs({
-    autofocus: 'autofocus'
+    autoFocus: 'autofocus'
 })`
     width: 100%;
     height: 100%;
     background-color: transparent;
     border: none;
-    font-size: 24px;
-    line-height: ${1.37 * 24}px;
+    font-size: 18px;
+    font-family: ${fonts.serif}, serif;
+    font-weight: bold;
+    line-height: ${1.37 * 18}px;
     outline: none;
     resize: none;
 

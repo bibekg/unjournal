@@ -3,6 +3,9 @@
 import * as React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components'
+import Flex, { FlexItem } from 'styled-flex-component'
+import Toggle from 'react-toggle'
+import 'react-toggle/style.css'
 import { colors } from '../styles'
 import copy from '../copy'
 import Button from './Button'
@@ -20,11 +23,19 @@ const LandingViewWrapper = styled.div`
     align-items: center;
 `
 
-const Centerizer = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+const PromptSpecifier = styled(Flex)`
+    & > * {
+        margin: 0 5px;
+    }
+    margin-bottom: 15px;
+
+    // Add custom styles for the toggle component which doesn't accept style props
+    .react-toggle--checked .react-toggle-track {
+        background-color: ${colors.cream} !important;
+    }
+    .react-toggle--checked .react-toggle-thumb {
+        border-color: ${colors.green} !important;
+    }
 `
 
 const TimeSpecifier = styled.div`
@@ -33,6 +44,7 @@ const TimeSpecifier = styled.div`
     @media screen and (max-width: 767px) {
         flex-direction: column;
         align-items: center;
+        text-align: center;
     }
 
     @media screen and (min-width: 768px) {
@@ -52,7 +64,8 @@ type PropsType = {
 }
 
 type StateType = {
-    writeTime: number
+    writeTime: number,
+    wantWritingPrompt: boolean
 }
 
 export default class LandingView extends React.Component<PropsType, StateType> {
@@ -63,7 +76,8 @@ export default class LandingView extends React.Component<PropsType, StateType> {
         super(props)
 
         this.state = {
-            writeTime: 20
+            writeTime: 20,
+            wantWritingPrompt: false
         }
 
         this.handleTimeChange = this.handleTimeChange.bind(this)
@@ -86,15 +100,21 @@ export default class LandingView extends React.Component<PropsType, StateType> {
 
     handleStart() {
         if (this.state.writeTime > 0) {
-            this.props.onStartRequest(this.state.writeTime)
+            this.props.onStartRequest(this.state.writeTime, this.state.wantWritingPrompt)
         }
+    }
+
+    handlePromptToggle = () => {
+        this.setState({
+            wantWritingPrompt: !this.state.wantWritingPrompt
+        })
     }
 
     render(): React.Element<*> {
         return (
             <LandingViewWrapper>
                 <Navbar theme='dark' />
-                <Centerizer>
+                <Flex column alignCenter justifyCenter>
                     <TimeSpecifier>
                         <Title>{copy.timeSelector.pre}</Title>
                         <WriteTimeInput
@@ -106,10 +126,18 @@ export default class LandingView extends React.Component<PropsType, StateType> {
                         />
                         <Title>{copy.timeSelector.post[this.state.writeTime === 1 ? 'singular' : 'plural']}</Title>
                     </TimeSpecifier>
+                    <PromptSpecifier alignCenter>
+                        <Toggle 
+                            checked={this.state.wantWritingPrompt}
+                            onChange={this.handlePromptToggle}
+                            icons={false}
+                        />
+                        <Text bold size={18}>{copy.writingPromptInquiry}</Text>  
+                    </PromptSpecifier>
                     <Button onClick={this.handleStart}>
                         Write
                     </Button>
-                </Centerizer>
+                </Flex>
             </LandingViewWrapper>
         )
     }

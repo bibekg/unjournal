@@ -7,23 +7,27 @@ import LandingView from './components/LandingView'
 import WritingView from './components/WritingView'
 import CompletionView from './components/CompletionView'
 import AboutPage from './components/AboutPage'
+import copy from './copy'
+import { fonts } from './styles'
 
 injectGlobal([`
-  body {
-    font-family: 'Montserrat', sans-serif;
-    margin: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-  }
+    @import url('https://fonts.googleapis.com/css?family=Lora:400,700|Open+Sans:400,700');
 
-  body.disable-scroll {
-    overflow: hidden;
-  }
+    body {
+        font-family: ${fonts['sans-serif']}, sans-serif;
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
 
-  *, *:before, *:after {
-    box-sizing: border-box;
-  }
+    body.disable-scroll {
+        overflow: hidden;
+    }
+
+    *, *:before, *:after {
+        box-sizing: border-box;
+    }
 `])
 
 const AppWrapper = styled.div`
@@ -35,7 +39,8 @@ type PropsType = {}
 
 type StateType = {
     currentView: 'landing' | 'writing',
-    totalWriteTime: ?number
+    totalWriteTime: ?number,
+    writingPrompt: ?string
 }
 
 class App extends React.Component<PropsType, StateType> {
@@ -49,10 +54,11 @@ class App extends React.Component<PropsType, StateType> {
         this.handleCompletion = this.handleCompletion.bind(this)
     }
 
-    handleStartRequest(time: number) {
+    handleStartRequest(time: number, wantWritingPrompt: boolean) {
         this.setState({ 
             currentView: 'writing',
-            totalWriteTime: time * 60 * 1000
+            totalWriteTime: time * 60 * 1000,
+            writingPrompt: wantWritingPrompt ? copy.writingPrompts[Math.floor(Math.random() * copy.writingPrompts.length)] : null
         })
     }
 
@@ -65,7 +71,7 @@ class App extends React.Component<PropsType, StateType> {
     render() {
         const renderer = {
             landing: () => <LandingView onStartRequest={this.handleStartRequest} />,
-            writing: () => <WritingView totalWriteTime={this.state.totalWriteTime} onCompletion={this.handleCompletion} />,
+            writing: () => <WritingView totalWriteTime={this.state.totalWriteTime} writingPrompt={this.state.writingPrompt} onCompletion={this.handleCompletion} />,
             completion: () => <CompletionView />
         }[this.state.currentView]
 

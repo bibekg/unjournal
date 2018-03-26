@@ -6,3 +6,8 @@ export const colors = {
     black: '#717076',
     grey: '#d4dad1',
 }
+
+export const fonts = {
+    serif: 'Lora',
+    'sans-serif': 'Open Sans'
+}

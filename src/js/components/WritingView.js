@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import moment from 'moment'
 import TypePanel from './TypePanel'
 import WritingHUD from './WritingHUD'
+import Text from './Text'
 import { colors } from '../styles'
 import copy from '../copy'
 
@@ -14,10 +15,29 @@ const WritingViewWrapper = styled.div`
     background-color: ${colors.cream};
 `
 
+const WritingPrompt = styled.div`
+    width: 100%;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    & > * {
+        max-width: 80%;
+    }
+`
+
+const Break = styled.div`
+    width: 80%;
+    background-color: ${colors.grey};
+    height: 1px;
+    margin: 10px 0;
+`
+
 const TypePanelWrapper = styled.div`
     width: 100%;
     height: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-grow: 1;
@@ -45,6 +65,7 @@ const HUDToggle = styled.div`
 
 type PropsType = {
     totalWriteTime: number,
+    writingPromt: ?string,
     onCompletion: () => void
 }
 
@@ -180,6 +201,12 @@ export default class WritingView extends React.Component<PropsType> {
         return (
             <WritingViewWrapper showHUD={this.state.showHUD || this.state.remainingTime === 0}>
                 <TypePanelWrapper>
+                    { this.props.writingPrompt && [
+                            <WritingPrompt key={1}>
+                                <Text color={colors.brown} bold center size={18}>{this.props.writingPrompt}</Text>
+                            </WritingPrompt>,
+                            <Break key={2}/>
+                    ]}
                     <TypePanel 
                         innerRef={(ta: HTMLTextAreaElement) => { this.typePanel = ta }}
                         placeholder={copy.typePanelPlaceholder}

@@ -1,15 +1,11 @@
 // @flow
 
 import styled from 'styled-components'
-import { colors } from '../styles'
+import Text from './Text'
+import { colors, fonts } from '../styles'
 
-export default styled.h1`
-  font-size: ${props => ((props.sizeDelta || 1.0) * 48)}px;
-  font-weight: 400;
-  color: ${props => props.color ? props.color : colors.cream};
-  text-align: ${props => props.center ? 'center': 'left'};
-  text-decoration: ${props => props.underline ? 'underline' : 'none'};
-  @media (max-width: 700px) {
-    font-size: 20px;
-  }
+export default Text.withComponent('h1').extend.attrs({
+  size: props => props.size || 48
+})`
+  font-weight: bold;
 `
