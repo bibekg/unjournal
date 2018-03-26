@@ -16,19 +16,22 @@ const PageWrapper = styled.div`
     padding: 10%;
 `
 
+const Item = styled.div`
+    margin-bottom: 40px;
+`
+
 export default function AboutPage() {
     return (
         <PageWrapper>
             <Navbar theme='light' />
-            <Title color={colors.green}>{'What is Unjournal?'}</Title>
-            <Text bold color={colors.black}>
-                {copy.whatIsUnjournal}
-            </Text>
-
-            <Title color={colors.green}>{'How do I use it?'}</Title>
-            <Text bold color={colors.black}>
-                {copy.howToUse}
-            </Text>
+            {
+                copy.aboutParagraphs.map(p => (
+                    <Item key={p.title}>
+                        <Title color={colors.green} size={36}>{p.title}</Title>
+                        { p.content.map((c, i) => <Text key={i} color={colors.black}>{c}</Text>) }
+                    </Item>
+                ))
+            }
         </PageWrapper>
     )
 }

@@ -33,8 +33,11 @@ const PromptSpecifier = styled(Flex)`
     .react-toggle--checked .react-toggle-track {
         background-color: ${colors.cream} !important;
     }
-    .react-toggle--checked .react-toggle-thumb {
-        border-color: ${colors.green} !important;
+    .react-toggle-thumb {
+        background-color: ${colors.green};
+        .react-toggle--checked {
+            border-color: ${colors.green} !important;
+        }
     }
 `
 
