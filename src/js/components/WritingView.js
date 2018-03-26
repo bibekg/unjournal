@@ -87,9 +87,9 @@ export default class WritingView extends React.Component<PropsType> {
         super(props)
 
         this.state = {
-            totalWriteTime: 1000,
+            totalWriteTime: props.totalWriteTime,
             startTime: Date.now(),
-            remainingTime: 1000,
+            remainingTime: props.totalWriteTime,
             showHUD: true,
             showHUDToggle: false,
             actionBasedHUD: true,
