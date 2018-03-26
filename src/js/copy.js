@@ -14,9 +14,9 @@ export default {
     writingPrompts: [
         'What did you do today that was worth your time? If you\'re struggling to come up with an answer, what do you want to change?',
         'If tomorrow was the last day of your life, what would you do differently? What\'s stopping you from doing that tomorrow anyway?',
-        'Helplessness: that dull, sick feeling of not being the one at the reins. When did you last feel like that –- and what did you do about it?',
+        'Helplessness: that dull, sick feeling of not being the one at the reins. When did you last feel like that — and what did you do about it?',
         'Pick some object in the room with you. Observe it with complete mindfulness for one whole minute, then write about it.',
-        'Most of us are excellent at being self - deprecating, and are not so good at the opposite. Write about something you like about yourself.',
+        'Most of us are excellent at being self-deprecating, and are not so good at the opposite. Write about something you like about yourself.',
         'When you were 16, what did you think your life would look like? Does it look like that? Is that a good thing?',
         'Who inspires you to be a better person?',
         'If you could not work or go to school for a year, what would you do with that time?',
