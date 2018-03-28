@@ -11,3 +11,7 @@ export const fonts = {
     serif: 'Lora',
     'sans-serif': 'Open Sans'
 }
+
+export const breakpoints = {
+    mobile: 790
+}

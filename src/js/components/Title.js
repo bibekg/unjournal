@@ -2,10 +2,17 @@
 
 import styled from 'styled-components'
 import Text from './Text'
-import { colors, fonts } from '../styles'
+import { colors, fonts, breakpoints } from '../styles'
 
-export default Text.withComponent('h1').extend.attrs({
-  size: props => props.size || 48
-})`
+export default styled.h1`
   font-weight: bold;
+  color: ${colors.cream};
+
+  @media screen and (min-width: ${breakpoints.mobile}px) {
+    font-size: 48px;
+  }
+
+  @media screen and (max-width: ${breakpoints.mobile - 1}px) {
+    font-size: 24px;
+  }
 `

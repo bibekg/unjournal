@@ -2,7 +2,7 @@
 
 import * as React from 'react'
 import styled from 'styled-components'
-import { colors, fonts } from '../styles'
+import { colors, fonts, breakpoints } from '../styles'
 import { placeholderMixin } from '../styles/mixins'
 
 const InputElement = styled.input`
@@ -16,7 +16,14 @@ const InputElement = styled.input`
   border-bottom: 4px solid ${colors.cream};
   color: ${colors.cream};
   outline: none;
-  font-size: 64px;
+  
+  @media screen and (min-width: ${breakpoints.mobile}px) {
+    font-size: 64px;
+  }
+
+  @media screen and (max-width: ${breakpoints.mobile - 1}px) {
+    font-size: 36px;
+  }
 
   ::selection {
     background-color: ${colors.cream};

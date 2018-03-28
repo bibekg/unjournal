@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import Flex, { FlexItem } from 'styled-flex-component'
 import Toggle from 'react-toggle'
 import 'react-toggle/style.css'
-import { colors } from '../styles'
+import { colors, breakpoints } from '../styles'
 import copy from '../copy'
 import Button from './Button'
 import Title from './Title'
@@ -21,6 +21,21 @@ const LandingViewWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+`
+
+const VertOnMobile = `
+    display: flex;
+
+    @media screen and (max-width: ${breakpoints.mobile - 1}px) {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    @media screen and (min-width: ${breakpoints.mobile}px) {
+        flex-direction: row;
+        align-items: flex-end;
+    }
 `
 
 const PromptSpecifier = styled(Flex)`
@@ -39,21 +54,14 @@ const PromptSpecifier = styled(Flex)`
             border-color: ${colors.green} !important;
         }
     }
+
+    ${VertOnMobile}
 `
 
 const TimeSpecifier = styled.div`
     display: flex;
 
-    @media screen and (max-width: 767px) {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    @media screen and (min-width: 768px) {
-        flex-direction: row;
-        align-items: flex-end;
-    }
+    ${VertOnMobile}
 
     & > * {
         margin: 5px;
