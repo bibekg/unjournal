@@ -12,7 +12,6 @@ export default styled.textarea.attrs({
     border: none;
     font-size: 18px;
     font-family: ${fonts.serif}, serif;
-    font-weight: bold;
     line-height: ${1.37 * 18}px;
     outline: none;
     resize: none;
