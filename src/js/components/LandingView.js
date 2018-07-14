@@ -15,12 +15,12 @@ import WriteTimeInput from './WriteTimeInput'
 import Navbar from './Navbar'
 
 const LandingViewWrapper = styled.div`
-    background-color: ${colors.green};
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: ${colors.green};
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 const VertOnMobile = `
@@ -39,117 +39,134 @@ const VertOnMobile = `
 `
 
 const PromptSpecifier = styled(Flex)`
-    & > * {
-        margin: 0 5px;
-    }
-    margin-bottom: 15px;
+  & > * {
+    margin: 0 5px;
+  }
+  margin-bottom: 15px;
 
-    // Add custom styles for the toggle component which doesn't accept style props
-    .react-toggle--checked .react-toggle-track {
-        background-color: ${colors.cream} !important;
+  // Add custom styles for the toggle component which doesn't accept style props
+  .react-toggle--checked .react-toggle-track {
+    background-color: ${colors.cream} !important;
+  }
+  .react-toggle-thumb {
+    background-color: ${colors.green};
+    .react-toggle--checked {
+      border-color: ${colors.green} !important;
     }
-    .react-toggle-thumb {
-        background-color: ${colors.green};
-        .react-toggle--checked {
-            border-color: ${colors.green} !important;
-        }
-    }
+  }
 
-    ${VertOnMobile}
+  ${VertOnMobile};
 `
 
 const TimeSpecifier = styled.div`
-    display: flex;
+  display: flex;
 
-    ${VertOnMobile}
+  ${VertOnMobile} & > * {
+    margin: 5px;
+  }
 
-    & > * {
-        margin: 5px;
-    }
-
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 `
 
 type PropsType = {
-    onStartRequest: (number) => void
+  onStartRequest: number => void
 }
 
 type StateType = {
-    writeTime: number,
-    wantWritingPrompt: boolean
+  writeTime: number,
+  wantWritingPrompt: boolean
 }
 
+const DEFAULT_WRITE_TIME = 20
+const LOCAL_STORAGE_KEYS = {
+  WRITE_TIME: 'writeTime'
+}
 export default class LandingView extends React.Component<PropsType, StateType> {
+  timeInput: ?HTMLInputElement
 
-    timeInput: ?HTMLInputElement
+  constructor(props: PropsType) {
+    super(props)
 
-    constructor(props: PropsType) {
-        super(props)
+    const writeTime = window.localStorage.getItem(LOCAL_STORAGE_KEYS.WRITE_TIME);
 
-        this.state = {
-            writeTime: 20,
-            wantWritingPrompt: false
-        }
-
-        this.handleTimeChange = this.handleTimeChange.bind(this)
-        this.handleStart = this.handleStart.bind(this)
+    this.state = {
+      writeTime: writeTime || DEFAULT_WRITE_TIME,
+      wantWritingPrompt: false
     }
 
-    componentDidMount() {
-        if (this.timeInput) {
-            this.timeInput.select()
-        }
-    }
+    this.handleTimeChange = this.handleTimeChange.bind(this)
+    this.handleStart = this.handleStart.bind(this)
+  }
 
-    handleTimeChange(event: SyntheticEvent<*>) {
-        const proposedValue = Number(event.target.value)
-        const isValidNumber = !isNaN(proposedValue) && proposedValue > 0 && proposedValue < 100
-        if (event.target.value === '' || isValidNumber) {
-            this.setState({ writeTime: parseInt(event.target.value, 10) })
-        }        
+  componentDidMount() {
+    if (this.timeInput) {
+      this.timeInput.select()
     }
+  }
 
-    handleStart() {
-        if (this.state.writeTime > 0) {
-            this.props.onStartRequest(this.state.writeTime, this.state.wantWritingPrompt)
-        }
+  handleTimeChange(event: SyntheticEvent<*>) {
+    const proposedValue = Number(event.target.value)
+    const isValidNumber =
+      !isNaN(proposedValue) && proposedValue > 0 && proposedValue < 100
+    if (event.target.value === '' || isValidNumber) {
+      const targetValue =  parseInt(event.target.value, 10)
+      this.setState({ writeTime: targetValue })
+      localStorage.setItem(LOCAL_STORAGE_KEYS.WRITE_TIME, targetValue)
     }
+  }
 
-    handlePromptToggle = () => {
-        this.setState({
-            wantWritingPrompt: !this.state.wantWritingPrompt
-        })
+  handleStart() {
+    if (this.state.writeTime > 0) {
+      this.props.onStartRequest(
+        this.state.writeTime,
+        this.state.wantWritingPrompt
+      )
     }
+  }
 
-    render(): React.Element<*> {
-        return (
-            <LandingViewWrapper>
-                <Navbar theme='dark' />
-                <Flex column alignCenter justifyCenter>
-                    <TimeSpecifier>
-                        <Title>{copy.timeSelector.pre}</Title>
-                        <WriteTimeInput
-                            innerRef={(el: HTMLInputElement) => { this.timeInput = el }}
-                            width={100}
-                            value={this.state.writeTime}
-                            onChange={this.handleTimeChange}
-                            onEnterPress={this.handleStart}
-                        />
-                        <Title>{copy.timeSelector.post[this.state.writeTime === 1 ? 'singular' : 'plural']}</Title>
-                    </TimeSpecifier>
-                    <PromptSpecifier alignCenter>
-                        <Toggle 
-                            checked={this.state.wantWritingPrompt}
-                            onChange={this.handlePromptToggle}
-                            icons={false}
-                        />
-                        <Text bold size={18}>{copy.writingPromptInquiry}</Text>  
-                    </PromptSpecifier>
-                    <Button onClick={this.handleStart}>
-                        Write
-                    </Button>
-                </Flex>
-            </LandingViewWrapper>
-        )
-    }
+  handlePromptToggle = () => {
+    this.setState({
+      wantWritingPrompt: !this.state.wantWritingPrompt
+    })
+  }
+
+  render(): React.Element<*> {
+    return (
+      <LandingViewWrapper>
+        <Navbar theme="dark" />
+        <Flex column alignCenter justifyCenter>
+          <TimeSpecifier>
+            <Title>{copy.timeSelector.pre}</Title>
+            <WriteTimeInput
+              innerRef={(el: HTMLInputElement) => {
+                this.timeInput = el
+              }}
+              width={100}
+              value={this.state.writeTime}
+              onChange={this.handleTimeChange}
+              onEnterPress={this.handleStart}
+            />
+            <Title>
+              {
+                copy.timeSelector.post[
+                  this.state.writeTime === 1 ? 'singular' : 'plural'
+                ]
+              }
+            </Title>
+          </TimeSpecifier>
+          <PromptSpecifier alignCenter>
+            <Toggle
+              checked={this.state.wantWritingPrompt}
+              onChange={this.handlePromptToggle}
+              icons={false}
+            />
+            <Text bold size={18}>
+              {copy.writingPromptInquiry}
+            </Text>
+          </PromptSpecifier>
+          <Button onClick={this.handleStart}>Write</Button>
+        </Flex>
+      </LandingViewWrapper>
+    )
+  }
 }

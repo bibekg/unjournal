@@ -12,12 +12,12 @@ const NavbarDiv = styled.div`
     top: 0;
     left: 0;
     width: 100vw;
-    padding: 10px;
+    padding: 10px 30px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    background-color: transparent;
+    background-color: ${props => props.color || 'transparent'};
 `
 
 const NavItems = styled.div`
@@ -41,8 +41,13 @@ export default function Navbar(props: PropsType) {
         'dark': colors.white
     }[props.theme]
 
+    const backgroundColor = {
+        light: colors.cream,
+        dark: colors.green
+    }[props.theme]
+
     return (
-        <NavbarDiv>
+        <NavbarDiv color={backgroundColor}>
             <Logo color={textColor}/>
             <NavItems>
                 <Link to='/about'>

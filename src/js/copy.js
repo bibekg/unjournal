@@ -18,7 +18,7 @@ export default {
         {
             title: 'Why does Unjournal exist?',
             content: [
-                'Unjournal exists to clear the common misconception that writing is just for authors, bloggers, and students. In truth, writing is an incredibly therapeutic and mindful activity for anyone and everyone. With Unjournal, the oft-overwhelming process of writing is stripped down to nothing more than turning your thoughts into words.'
+                'Unjournal exists to clear the common misconception that writing is just for authors, bloggers, and students. In truth, writing is an incredibly therapeutic and mindful activity for anyone and everyone. With Unjournal, the oft-overwhelming process of writing is stripped down to nothing more than converting your thoughts to words.'
             ]
         },
         {

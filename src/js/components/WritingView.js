@@ -11,7 +11,7 @@ import copy from '../copy'
 
 const WritingViewWrapper = styled.div`
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: ${colors.cream};
 `
 
