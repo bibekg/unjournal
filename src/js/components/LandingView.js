@@ -14,6 +14,18 @@ import Text from './Text'
 import WriteTimeInput from './WriteTimeInput'
 import Navbar from './Navbar'
 
+const FlexDiv = Flex.extend`
+  position: relative;
+`
+
+const Disclaimer = styled.div`
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  padding: 20px;
+`
+
 const LandingViewWrapper = styled.div`
   background-color: ${colors.green};
   width: 100%;
@@ -165,6 +177,10 @@ export default class LandingView extends React.Component<PropsType, StateType> {
             </Text>
           </PromptSpecifier>
           <Button onClick={this.handleStart}>Write</Button>
+
+          <Disclaimer>
+              <Text size={14}>{copy.disclaimerText}</Text>
+          </Disclaimer>
         </Flex>
       </LandingViewWrapper>
     )

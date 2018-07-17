@@ -35,5 +35,6 @@ export default {
         'Most of us are excellent at being self-deprecating, and are not so good at the opposite. Write about something you like about yourself.',
         'Talk about someone who inspires you to be a better person.',
         'What did you fail at today and what did you learn from it?'
-    ]
+    ],
+    disclaimerText: 'Rest assured, your writing is never stored beyond your writing session.'
 }
