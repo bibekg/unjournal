@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "eslint-plugin-flowtype": "^2.46.1",
+    "json5": "^2.1.0",
     "moment": "^2.21.0",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
@@ -22,12 +23,13 @@
     "styled-flex-component": "^2.2.2"
   },
   "devDependencies": {
+    "babel-core": "^6.26.3",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.6.1",
     "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
     "flow": "^0.2.3",
-    "parcel-bundler": "^1.6.2",
+    "parcel-bundler": "^1.11.0",
     "rimraf": "^2.6.2",
     "surge": "^0.20.1"
   }
