@@ -6,7 +6,7 @@ import { colors, fonts, breakpoints } from '../styles'
 import { placeholderMixin } from '../styles/mixins'
 
 const InputElement = styled.input`
-  width: ${props => props.width ? `${props.width}px` : '100%'};
+  width: ${props => (props.width ? `${props.width}px` : '100%')};
   padding: 10px 5px 0px 5px;
   margin-bottom: 30px;
   background-color: transparent;
@@ -16,14 +16,11 @@ const InputElement = styled.input`
   border-bottom: 4px solid ${colors.cream};
   color: ${colors.cream};
   outline: none;
-  
-  @media screen and (min-width: ${breakpoints.mobile}px) {
-    font-size: 64px;
-  }
 
-  @media screen and (max-width: ${breakpoints.mobile - 1}px) {
-    font-size: 36px;
-  }
+  font-size: 36px;
+  ${breakpoints.md`
+    font-size: 48px;
+  `}
 
   ::selection {
     background-color: ${colors.cream};
@@ -31,13 +28,13 @@ const InputElement = styled.input`
   }
 
   &::placeholder {
-    color: rgba(0,0,0,0.5);
+    color: rgba(0, 0, 0, 0.5);
   }
 
   &::-webkit-outer-spin-button,
   &::-webkit-inner-spin-button {
-      -webkit-appearance: none;
-      margin: 0;
+    -webkit-appearance: none;
+    margin: 0;
   }
   -moz-appearance: textfield;
 
@@ -47,8 +44,8 @@ const InputElement = styled.input`
 type PropsType = {
   innerRef: (?HTMLInputElement) => void,
   value: number,
-  onChange: (number) => void,
-  onEnterPress: () => void
+  onChange: number => void,
+  onEnterPress: () => void,
 }
 
 export default function WriteTimeInput(props: PropsType) {
@@ -60,8 +57,8 @@ export default function WriteTimeInput(props: PropsType) {
 
   return (
     <InputElement
-      type='number'
-      autofocus='autofocus'
+      type="number"
+      autofocus="autofocus"
       min={1}
       max={99}
       innerRef={props.innerRef}
@@ -74,5 +71,5 @@ export default function WriteTimeInput(props: PropsType) {
 }
 
 WriteTimeInput.defaultProps = {
-  innerRef: () => { }
+  innerRef: () => {},
 }

@@ -1,17 +1,8 @@
-export const colors = {
-    green: '#19ab80',
-    brown: '#846044',
-    cream: '#F7EFE0',
-    white: '#f0f4f7',
-    black: '#717076',
-    grey: '#d4dad1',
-}
+export { default as colors } from './colors'
+export { default as breakpoints } from './breakpoints'
+export { default as themes } from './themes'
 
 export const fonts = {
-    serif: 'Lora',
-    'sans-serif': 'Open Sans'
-}
-
-export const breakpoints = {
-    mobile: 790
+  serif: 'Lora',
+  'sans-serif': 'Open Sans',
 }

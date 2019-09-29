@@ -27,7 +27,7 @@ const Disclaimer = styled.div`
 `
 
 const LandingViewWrapper = styled.div`
-  background-color: ${colors.green};
+  background-color: ${props => props.theme.landing.background};
   width: 100%;
   height: 100vh;
   display: flex;
@@ -35,22 +35,17 @@ const LandingViewWrapper = styled.div`
   align-items: center;
 `
 
-const VertOnMobile = `
-    display: flex;
-
-    @media screen and (max-width: ${breakpoints.mobile - 1}px) {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    @media screen and (min-width: ${breakpoints.mobile}px) {
-        flex-direction: row;
-        align-items: flex-end;
-    }
-`
-
 const PromptSpecifier = styled(Flex)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  ${breakpoints.md`
+    flex-direction: row;
+    align-items: flex-end;
+  `}
+
   & > * {
     margin: 0 5px;
   }
@@ -66,32 +61,44 @@ const PromptSpecifier = styled(Flex)`
       border-color: ${colors.green} !important;
     }
   }
+`
 
-  ${VertOnMobile};
+const PostTitle = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+
+  & > *:first-child {
+    margin-right: 8px;
+    margin-left: 8px;
+  }
 `
 
 const TimeSpecifier = styled.div`
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 25px;
 
-  ${VertOnMobile} & > * {
-    margin: 5px;
-  }
-
-  margin-bottom: 20px;
+  ${breakpoints.md`
+    flex-direction: row;
+    align-items: flex-end;
+  `}
 `
 
 type PropsType = {
-  onStartRequest: number => void
+  onStartRequest: number => void,
 }
 
 type StateType = {
   writeTime: number,
-  wantWritingPrompt: boolean
+  wantWritingPrompt: boolean,
 }
 
 const DEFAULT_WRITE_TIME = 20
 const LOCAL_STORAGE_KEYS = {
-  WRITE_TIME: 'writeTime'
+  WRITE_TIME: 'writeTime',
 }
 export default class LandingView extends React.Component<PropsType, StateType> {
   timeInput: ?HTMLInputElement
@@ -99,11 +106,11 @@ export default class LandingView extends React.Component<PropsType, StateType> {
   constructor(props: PropsType) {
     super(props)
 
-    const writeTime = window.localStorage.getItem(LOCAL_STORAGE_KEYS.WRITE_TIME);
+    const writeTime = window.localStorage.getItem(LOCAL_STORAGE_KEYS.WRITE_TIME)
 
     this.state = {
       writeTime: writeTime || DEFAULT_WRITE_TIME,
-      wantWritingPrompt: false
+      wantWritingPrompt: false,
     }
 
     this.handleTimeChange = this.handleTimeChange.bind(this)
@@ -121,7 +128,7 @@ export default class LandingView extends React.Component<PropsType, StateType> {
     const isValidNumber =
       !isNaN(proposedValue) && proposedValue > 0 && proposedValue < 100
     if (event.target.value === '' || isValidNumber) {
-      const targetValue =  parseInt(event.target.value, 10)
+      const targetValue = parseInt(event.target.value, 10)
       this.setState({ writeTime: targetValue })
       localStorage.setItem(LOCAL_STORAGE_KEYS.WRITE_TIME, targetValue)
     }
@@ -138,33 +145,29 @@ export default class LandingView extends React.Component<PropsType, StateType> {
 
   handlePromptToggle = () => {
     this.setState({
-      wantWritingPrompt: !this.state.wantWritingPrompt
+      wantWritingPrompt: !this.state.wantWritingPrompt,
     })
   }
 
   render(): React.Element<*> {
     return (
       <LandingViewWrapper>
-        <Navbar theme="dark" />
+        <Navbar />
         <Flex column alignCenter justifyCenter>
           <TimeSpecifier>
-            <Title>{copy.timeSelector.pre}</Title>
-            <WriteTimeInput
-              innerRef={(el: HTMLInputElement) => {
-                this.timeInput = el
-              }}
-              width={100}
-              value={this.state.writeTime}
-              onChange={this.handleTimeChange}
-              onEnterPress={this.handleStart}
-            />
-            <Title>
-              {
-                copy.timeSelector.post[
-                  this.state.writeTime === 1 ? 'singular' : 'plural'
-                ]
-              }
-            </Title>
+            <Title>I want to write for</Title>
+            <PostTitle>
+              <WriteTimeInput
+                innerRef={(el: HTMLInputElement) => {
+                  this.timeInput = el
+                }}
+                width={100}
+                value={this.state.writeTime}
+                onChange={this.handleTimeChange}
+                onEnterPress={this.handleStart}
+              />
+              <Title>{this.state.writeTime === 1 ? 'minute' : 'minutes'}</Title>
+            </PostTitle>
           </TimeSpecifier>
           <PromptSpecifier alignCenter>
             <Toggle
@@ -173,13 +176,13 @@ export default class LandingView extends React.Component<PropsType, StateType> {
               icons={false}
             />
             <Text bold size={18}>
-              {copy.writingPromptInquiry}
+              Writing prompt
             </Text>
           </PromptSpecifier>
           <Button onClick={this.handleStart}>Write</Button>
 
           <Disclaimer>
-              <Text size={14}>{copy.disclaimerText}</Text>
+            <Text size={14}>{copy.disclaimerText}</Text>
           </Disclaimer>
         </Flex>
       </LandingViewWrapper>

@@ -13,7 +13,9 @@
     "clean": "rimraf dist && rimraf build"
   },
   "dependencies": {
-    "eslint-plugin-flowtype": "^2.46.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.25",
+    "@fortawesome/free-solid-svg-icons": "^5.11.2",
+    "@fortawesome/react-fontawesome": "^0.1.4",
     "json5": "^2.1.0",
     "moment": "^2.21.0",
     "react": "^16.2.0",
@@ -27,9 +29,7 @@
     "babel-core": "^6.26.3",
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-preset-env": "^1.6.1",
-    "babel-preset-flow": "^6.23.0",
     "babel-preset-react": "^6.24.1",
-    "flow": "^0.2.3",
     "parcel-bundler": "^1.11.0",
     "rimraf": "^2.6.2",
     "surge": "^0.20.1"

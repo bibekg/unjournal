@@ -2,13 +2,14 @@
 
 import * as React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import styled, { injectGlobal } from 'styled-components'
+import styled, { injectGlobal, ThemeProvider } from 'styled-components'
 import LandingView from './components/LandingView'
 import WritingView from './components/WritingView'
 import CompletionView from './components/CompletionView'
 import AboutPage from './components/AboutPage'
+import DarkModeToggle from './components/DarkModeToggle'
 import copy from './copy'
-import { fonts } from './styles'
+import { fonts, colors, themes } from './styles'
 
 injectGlobal([
   `
@@ -31,7 +32,15 @@ injectGlobal([
 `,
 ])
 
-const AppWrapper = styled.div``
+const AppWrapper = styled.div`
+  position: relative;
+`
+
+const DarkModeToggleWrapper = styled.div`
+  position: fixed;
+  top: 50px;
+  right: 30px;
+`
 
 AppWrapper.displayName = 'AppWrapper'
 
@@ -49,6 +58,7 @@ class App extends React.Component<PropsType, StateType> {
     this.state = {
       currentView: 'landing',
       totalWriteTime: null,
+      isDarkMode: false,
     }
     this.handleStartRequest = this.handleStartRequest.bind(this)
     this.handleCompletion = this.handleCompletion.bind(this)
@@ -72,6 +82,12 @@ class App extends React.Component<PropsType, StateType> {
     })
   }
 
+  onChangeDarkMode = () => {
+    this.setState({
+      isDarkMode: !this.state.isDarkMode,
+    })
+  }
+
   render() {
     const renderer = {
       landing: () => <LandingView onStartRequest={this.handleStartRequest} />,
@@ -85,14 +101,28 @@ class App extends React.Component<PropsType, StateType> {
       completion: () => <CompletionView />,
     }[this.state.currentView]
 
+    const wrapWithTheme = Comp => () => (
+      <ThemeProvider theme={this.state.isDarkMode ? themes.dark : themes.light}>
+        <Comp />
+      </ThemeProvider>
+    )
+
     return (
       <AppWrapper>
         <BrowserRouter>
           <Switch>
             <Route path="/about" render={() => <AboutPage />} />
-            <Route exact path="/" render={renderer} />
+            <Route exact path="/" render={wrapWithTheme(renderer)} />
           </Switch>
         </BrowserRouter>
+        {this.state.currentView === 'landing' && (
+          <DarkModeToggleWrapper>
+            <DarkModeToggle
+              isDarkMode={this.state.isDarkMode}
+              handleChange={this.onChangeDarkMode}
+            />
+          </DarkModeToggleWrapper>
+        )}
       </AppWrapper>
     )
   }
